@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Получение высоты экрана телефона
+        if loadScreenSize() == 0.0 {saveScreenSize(UIScreen.main.bounds.height)}
         return true
     }
 

@@ -39,12 +39,13 @@ extension UIView {
         }
     }
     //Создание элементов на контроллере
-    func creatingElements(_ elementName: [UIView]){
-        for sortingElements in elementName {
-            self.addSubview(sortingElements)
+    func creatingElements(_ elementName: [UIView]){ //Создаем функцию с формой для указания элементов интерфейса
+        for sortingElements in elementName { // сортируем из библиотеки каждый эелемент
+            self.addSubview(sortingElements) // создаем каждый элемент из библиотеки
         }
     }
     func customViewContainer(){
         
     }
+    
 }
