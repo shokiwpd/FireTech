@@ -11,3 +11,27 @@ import UIKit
 extension UITextField {
         
 }
+//класс формы для логина
+class loginTextField: UITextField {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        textColor = .black
+        borderStyle = .line
+        backgroundColor = .green
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+//класс формы для пароля
+class passwordTextField : UITextField {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .green
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

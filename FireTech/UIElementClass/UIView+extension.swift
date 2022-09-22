@@ -38,6 +38,9 @@ extension UIView {
             bottomAnchor.constraint(equalTo: bottom, constant: bottomConstant).isActive = true
         }
     }
+    func widthSize(_ w: CGFloat) {
+        self.widthAnchor.constraint(equalToConstant: w).isActive = true
+    }
     //Создание элементов на контроллере
     func creatingElements(_ elementName: [UIView]){ //Создаем функцию с формой для указания элементов интерфейса
         for sortingElements in elementName { // сортируем из библиотеки каждый эелемент
