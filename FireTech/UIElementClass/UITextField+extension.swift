@@ -18,6 +18,8 @@ class loginTextField: UITextField {
         textColor = .black
         borderStyle = .line
         backgroundColor = .green
+        textContentType = .emailAddress
+        keyboardType = .emailAddress
     }
     
     required init?(coder: NSCoder) {
@@ -29,6 +31,10 @@ class loginTextField: UITextField {
 class passwordTextField : UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        textColor = .black
+        borderStyle = .line
+        textContentType = .password
+        isSecureTextEntry = true
         backgroundColor = .green
     }
     required init?(coder: NSCoder) {

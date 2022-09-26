@@ -12,25 +12,27 @@ import UIKit
 class AuthorizationViewController: UIViewController {
     //Объявление элементов интерфейса
     let appNameLabel = headingLabel()
-    let viewContainer: UIView = { //Временная настройка
-        let viewes = UIView()
-        viewes.translatesAutoresizingMaskIntoConstraints = false
-            viewes.backgroundColor = .red
-        return viewes
-    }()
+    let viewContainer = customViewContainer()
     let loginField = loginTextField() // Временно лейбл
     let passwordField = passwordTextField()
     let loginButton = appActiveButton()
     let OfflineLoginButton = appClearButton()
+    let viewSize = UIScreen.main.bounds.width-100
     
+    override func viewDidLayoutSubviews() {
+        createLayoutUIElement()
+        print((viewSize - (((viewSize/8)*4)+65))/2)
+        
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loginButton.setTitle("Set", for: .normal)
+        OfflineLoginButton.setTitle("Offline", for: .normal)
         self.view.creatingElements([appNameLabel, viewContainer])
         self.viewContainer.creatingElements([loginField, passwordField, loginButton, OfflineLoginButton])
-        createLayoutUIElement()
     }
-
+    
     //Расстановка элементов (Код надо будет распиать более аккуратно и компактно)
     func createLayoutUIElement() {
         appNameLabel.positionOfElements(nil, 0,
@@ -43,25 +45,26 @@ class AuthorizationViewController: UIViewController {
         viewContainer.widthSize(UIScreen.main.bounds.width - 100)
         viewContainer.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 100).isActive = true
         
-        loginField.positionOfElements(viewContainer.topAnchor, 20,
-                                      viewContainer.leadingAnchor, 20,
-                                      viewContainer.trailingAnchor, -20,
+        loginField.positionOfElements(viewContainer.topAnchor, (viewSize - (((viewSize/8)*4)+65))/2,
+                                      viewContainer.leadingAnchor, 10,
+                                      viewContainer.trailingAnchor, -10,
                                       nil, 0)
-        passwordField.positionOfElements(loginField.topAnchor, 50,
+        loginField.heightAnchor.constraint(equalToConstant: ((UIScreen.main.bounds.width - 100)/8)).isActive = true
+        passwordField.positionOfElements(loginField.bottomAnchor, 15,
                                          loginField.leadingAnchor, 0,
                                          loginField.trailingAnchor, 0,
                                          nil, 0)
-        loginButton.positionOfElements(passwordField.bottomAnchor, 20,
+        passwordField.heightAnchor.constraint(equalToConstant: ((UIScreen.main.bounds.width - 100)/8)).isActive = true
+        loginButton.positionOfElements(passwordField.bottomAnchor, 15,
                                        passwordField.leadingAnchor, 0,
                                        passwordField.trailingAnchor, 0,
                                        nil, 0)
-        OfflineLoginButton.positionOfElements(loginButton.bottomAnchor, 20,
+        loginButton.heightAnchor.constraint(equalToConstant: ((UIScreen.main.bounds.width - 100)/8)+10).isActive = true
+        OfflineLoginButton.positionOfElements(loginButton.bottomAnchor, 15,
                                               loginButton.leadingAnchor, 0,
                                               loginButton.trailingAnchor, 0,
                                               nil, 0)
-        
-        
-        
+        OfflineLoginButton.heightAnchor.constraint(equalToConstant: ((UIScreen.main.bounds.width - 100)/8)+10).isActive = true
     }
     func getSizeScreen(){
         

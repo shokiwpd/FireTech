@@ -40,11 +40,10 @@ extension UILabel {
 class headingLabel:UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        text = "FireTech"
-        textColor = .red
-        textAlignment = .center
-        backgroundColor = .green
-        print("Add Label")
+            text = "FireTech"
+            textColor = .red
+            textAlignment = .center
+            backgroundColor = .green
         }
     required init?(coder: NSCoder) {
             super.init(coder: coder)

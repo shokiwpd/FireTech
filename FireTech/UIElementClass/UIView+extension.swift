@@ -47,8 +47,18 @@ extension UIView {
             self.addSubview(sortingElements) // создаем каждый элемент из библиотеки
         }
     }
-    func customViewContainer(){
-        
+}
+class customViewContainer: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false 
+        backgroundColor = .red
+        layer.cornerRadius = 27
+        layer.borderWidth = 2
+        layer.borderColor = CGColor(red: 255, green: 255, blue: 0, alpha: 1)
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
