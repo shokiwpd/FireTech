@@ -22,13 +22,15 @@ class AuthorizationViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         createLayoutUIElement()
         print((viewSize - (((viewSize/8)*4)+65))/2)
-        
-
+        print(loadScreenSize())
+        print(viewSize)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         loginButton.setTitle("Set", for: .normal)
         OfflineLoginButton.setTitle("Offline", for: .normal)
+        appNameLabel.headingfontStyle(String(loadScreenSize()))
         self.view.creatingElements([appNameLabel, viewContainer])
         self.viewContainer.creatingElements([loginField, passwordField, loginButton, OfflineLoginButton])
     }
@@ -65,8 +67,5 @@ class AuthorizationViewController: UIViewController {
                                               loginButton.trailingAnchor, 0,
                                               nil, 0)
         OfflineLoginButton.heightAnchor.constraint(equalToConstant: ((UIScreen.main.bounds.width - 100)/8)+10).isActive = true
-    }
-    func getSizeScreen(){
-        
     }
 }

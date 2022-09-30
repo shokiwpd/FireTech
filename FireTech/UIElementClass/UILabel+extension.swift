@@ -22,6 +22,8 @@ extension UILabel {
                 self.font = UIFont(name:  "Times New Roman", size: 75)//iPhone X,XS,XR,11 Pro,11 Pro Max
             case 926.0...946:
                 self.font = UIFont(name:  "Times New Roman", size: 80)//iPhone 12 Max Pro
+            case 824.0...844.0:
+                self.font = UIFont(name:  "Times New Roman", size: 80)//iPhone 12 Max Pro
             case 876.0...896.0:
                 self.font = UIFont(name:  "Times New Roman", size: 85)//iPhone XS_Max,11
             case 1004.0...1024.0:
@@ -41,9 +43,8 @@ class headingLabel:UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
             text = "FireTech"
-            textColor = .red
+        textColor = .systemGray
             textAlignment = .center
-            backgroundColor = .green
         }
     required init?(coder: NSCoder) {
             super.init(coder: coder)

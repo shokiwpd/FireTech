@@ -16,7 +16,7 @@ class appActiveButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setTitleColor(.black, for: .normal)
-        backgroundColor = .green
+        backgroundColor = .systemGray4
         layer.cornerRadius = 5
     }
     
@@ -30,7 +30,7 @@ class appClearButton: UIButton {
         setTitleColor(.black, for: .normal)
         backgroundColor = .clear
         layer.borderWidth = 1
-        layer.borderColor = CGColor(red: 255, green: 255, blue: 0, alpha: 1)
+        layer.borderColor = CGColor(red: 1, green: 1, blue: 1, alpha: 1)
         layer.cornerRadius = 5
         
 

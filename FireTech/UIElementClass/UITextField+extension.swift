@@ -16,8 +16,8 @@ class loginTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         textColor = .black
-        borderStyle = .line
-        backgroundColor = .green
+        borderStyle = .roundedRect
+        backgroundColor = .systemGray2
         textContentType = .emailAddress
         keyboardType = .emailAddress
     }
@@ -32,10 +32,10 @@ class passwordTextField : UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         textColor = .black
-        borderStyle = .line
+        borderStyle = .roundedRect
         textContentType = .password
         isSecureTextEntry = true
-        backgroundColor = .green
+        backgroundColor = .systemGray2
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
