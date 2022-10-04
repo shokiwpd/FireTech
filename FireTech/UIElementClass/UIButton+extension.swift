@@ -15,8 +15,8 @@ extension UIButton {
 class appActiveButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setTitleColor(.black, for: .normal)
-        backgroundColor = .systemGray4
+        setTitleColor(.colorText, for: .normal)
+        backgroundColor = .colorButton
         layer.cornerRadius = 5
     }
     
@@ -27,10 +27,10 @@ class appActiveButton: UIButton {
 class appClearButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setTitleColor(.black, for: .normal)
+        setTitleColor(.colorText, for: .normal)
         backgroundColor = .clear
         layer.borderWidth = 1
-        layer.borderColor = CGColor(red: 1, green: 1, blue: 1, alpha: 1)
+        layer.borderColor = UIColor.colorButton.cgColor
         layer.cornerRadius = 5
         
 

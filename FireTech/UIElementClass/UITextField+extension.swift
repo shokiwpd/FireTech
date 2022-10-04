@@ -15,9 +15,9 @@ extension UITextField {
 class loginTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        textColor = .black
+        textColor = .colorText
         borderStyle = .roundedRect
-        backgroundColor = .systemGray2
+        backgroundColor = .colorTextField
         textContentType = .emailAddress
         keyboardType = .emailAddress
     }
@@ -31,11 +31,11 @@ class loginTextField: UITextField {
 class passwordTextField : UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        textColor = .black
+        textColor = .colorText
         borderStyle = .roundedRect
         textContentType = .password
         isSecureTextEntry = true
-        backgroundColor = .systemGray2
+        backgroundColor =  .colorTextField
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

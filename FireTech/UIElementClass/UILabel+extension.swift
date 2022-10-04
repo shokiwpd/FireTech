@@ -43,7 +43,7 @@ class headingLabel:UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
             text = "FireTech"
-        textColor = .systemGray
+            textColor = .colorText
             textAlignment = .center
         }
     required init?(coder: NSCoder) {

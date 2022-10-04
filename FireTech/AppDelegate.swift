@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Получение высоты экрана телефона
         if loadScreenSize() == 0.0 {saveScreenSize(UIScreen.main.bounds.height)}
+        if loadWidthScreenSize() == 0.0 {saveWidthSize(UIScreen.main.bounds.width)}
         return true
     }
 
