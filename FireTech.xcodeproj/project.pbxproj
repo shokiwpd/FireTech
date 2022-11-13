@@ -18,6 +18,8 @@
 		1321503428BBAF4C00D40294 /* UITextField+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1321503328BBAF4C00D40294 /* UITextField+extension.swift */; };
 		1321503628BBAF7400D40294 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1321503528BBAF7400D40294 /* UIButton+extension.swift */; };
 		1383DD7628D224A800DD257B /* DataUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1383DD7528D224A800DD257B /* DataUserDefaults.swift */; };
+		1385258D291BE6190042EDBF /* mainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1385258C291BE6190042EDBF /* mainTabBarController.swift */; };
+		1385258F291C25300042EDBF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1385258E291C25300042EDBF /* Podfile */; };
 		13936F3928B11CD3004C9943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13936F3828B11CD3004C9943 /* AppDelegate.swift */; };
 		13936F3B28B11CD3004C9943 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13936F3A28B11CD3004C9943 /* SceneDelegate.swift */; };
 		13936F4228B11CD6004C9943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13936F4128B11CD6004C9943 /* Assets.xcassets */; };
@@ -26,6 +28,7 @@
 		13936F5A28B11CD7004C9943 /* FireTechUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13936F5928B11CD7004C9943 /* FireTechUITests.swift */; };
 		13936F5C28B11CD7004C9943 /* FireTechUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13936F5B28B11CD7004C9943 /* FireTechUITestsLaunchTests.swift */; };
 		13936F6A28B11D50004C9943 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13936F6928B11D50004C9943 /* UIView+extension.swift */; };
+		9D88A2908134914A83669479 /* libPods-FireTech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2325066A6344FBCE37CBA20B /* libPods-FireTech.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,8 @@
 		1321503328BBAF4C00D40294 /* UITextField+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extension.swift"; sourceTree = "<group>"; };
 		1321503528BBAF7400D40294 /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
 		1383DD7528D224A800DD257B /* DataUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUserDefaults.swift; sourceTree = "<group>"; };
+		1385258C291BE6190042EDBF /* mainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabBarController.swift; sourceTree = "<group>"; };
+		1385258E291C25300042EDBF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		13936F3528B11CD3004C9943 /* FireTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13936F3828B11CD3004C9943 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13936F3A28B11CD3004C9943 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +74,9 @@
 		13936F5928B11CD7004C9943 /* FireTechUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTechUITests.swift; sourceTree = "<group>"; };
 		13936F5B28B11CD7004C9943 /* FireTechUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTechUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		13936F6928B11D50004C9943 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		2325066A6344FBCE37CBA20B /* libPods-FireTech.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireTech.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4D6E1DF0CC664E915721C2 /* Pods-FireTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTech.release.xcconfig"; path = "Target Support Files/Pods-FireTech/Pods-FireTech.release.xcconfig"; sourceTree = "<group>"; };
+		845C5B3B6498165932F43948 /* Pods-FireTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTech.debug.xcconfig"; path = "Target Support Files/Pods-FireTech/Pods-FireTech.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D88A2908134914A83669479 /* libPods-FireTech.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +108,7 @@
 		13048B8828C263D0003657FD /* ViewControllerGroup */ = {
 			isa = PBXGroup;
 			children = (
+				1385258B291BE5D10042EDBF /* mainBarViewControllerGroup */,
 				13048B8928C2649D003657FD /* AuthorizationViewController.swift */,
 			);
 			path = ViewControllerGroup;
@@ -115,13 +125,24 @@
 			path = ReadyMadeClasses;
 			sourceTree = "<group>";
 		};
+		1385258B291BE5D10042EDBF /* mainBarViewControllerGroup */ = {
+			isa = PBXGroup;
+			children = (
+				1385258C291BE6190042EDBF /* mainTabBarController.swift */,
+			);
+			path = mainBarViewControllerGroup;
+			sourceTree = "<group>";
+		};
 		13936F2C28B11CD3004C9943 = {
 			isa = PBXGroup;
 			children = (
+				1385258E291C25300042EDBF /* Podfile */,
 				13936F3728B11CD3004C9943 /* FireTech */,
 				13936F4E28B11CD7004C9943 /* FireTechTests */,
 				13936F5828B11CD7004C9943 /* FireTechUITests */,
 				13936F3628B11CD3004C9943 /* Products */,
+				6CFA065CF94E832AB2EF4EDA /* Pods */,
+				2D7D33D4712E9592B2C77250 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +202,23 @@
 			path = UIElementClass;
 			sourceTree = "<group>";
 		};
+		2D7D33D4712E9592B2C77250 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2325066A6344FBCE37CBA20B /* libPods-FireTech.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CFA065CF94E832AB2EF4EDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				845C5B3B6498165932F43948 /* Pods-FireTech.debug.xcconfig */,
+				5A4D6E1DF0CC664E915721C2 /* Pods-FireTech.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13936F5F28B11CD7004C9943 /* Build configuration list for PBXNativeTarget "FireTech" */;
 			buildPhases = (
+				E92238417A257E8566EA53AA /* [CP] Check Pods Manifest.lock */,
 				13936F3128B11CD3004C9943 /* Sources */,
 				13936F3228B11CD3004C9943 /* Frameworks */,
 				13936F3328B11CD3004C9943 /* Resources */,
@@ -285,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1385258F291C25300042EDBF /* Podfile in Resources */,
 				13936F4528B11CD6004C9943 /* LaunchScreen.storyboard in Resources */,
 				13936F4228B11CD6004C9943 /* Assets.xcassets in Resources */,
 			);
@@ -306,6 +346,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E92238417A257E8566EA53AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FireTech-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		13936F3128B11CD3004C9943 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -324,6 +389,7 @@
 				1321503428BBAF4C00D40294 /* UITextField+extension.swift in Sources */,
 				13048B8C28C26918003657FD /* UIColor+extension.swift in Sources */,
 				13936F3B28B11CD3004C9943 /* SceneDelegate.swift in Sources */,
+				1385258D291BE6190042EDBF /* mainTabBarController.swift in Sources */,
 				13092E4128BD1A790006B213 /* UserProfileClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +554,7 @@
 		};
 		13936F6028B11CD7004C9943 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 845C5B3B6498165932F43948 /* Pods-FireTech.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -517,6 +584,7 @@
 		};
 		13936F6128B11CD7004C9943 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A4D6E1DF0CC664E915721C2 /* Pods-FireTech.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
