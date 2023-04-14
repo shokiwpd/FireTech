@@ -28,6 +28,11 @@
 		13936F5A28B11CD7004C9943 /* FireTechUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13936F5928B11CD7004C9943 /* FireTechUITests.swift */; };
 		13936F5C28B11CD7004C9943 /* FireTechUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13936F5B28B11CD7004C9943 /* FireTechUITestsLaunchTests.swift */; };
 		13936F6A28B11D50004C9943 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13936F6928B11D50004C9943 /* UIView+extension.swift */; };
+		13B7E2062980547800D14AF3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7E2052980547800D14AF3 /* MainViewController.swift */; };
+		13CC88B629953A350056C90A /* newsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC88B529953A350056C90A /* newsModel.swift */; };
+		13CC88B829953B430056C90A /* newsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC88B729953B430056C90A /* newsView.swift */; };
+		13CF224029D9B7DC00DBAD1E /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF223F29D9B7DC00DBAD1E /* AuthorizationView.swift */; };
+		13CF224229D9B7EA00DBAD1E /* AuthorizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF224129D9B7EA00DBAD1E /* AuthorizationModel.swift */; };
 		9D88A2908134914A83669479 /* libPods-FireTech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2325066A6344FBCE37CBA20B /* libPods-FireTech.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +79,11 @@
 		13936F5928B11CD7004C9943 /* FireTechUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTechUITests.swift; sourceTree = "<group>"; };
 		13936F5B28B11CD7004C9943 /* FireTechUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTechUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		13936F6928B11D50004C9943 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		13B7E2052980547800D14AF3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		13CC88B529953A350056C90A /* newsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsModel.swift; sourceTree = "<group>"; };
+		13CC88B729953B430056C90A /* newsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsView.swift; sourceTree = "<group>"; };
+		13CF223F29D9B7DC00DBAD1E /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
+		13CF224129D9B7EA00DBAD1E /* AuthorizationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationModel.swift; sourceTree = "<group>"; };
 		2325066A6344FBCE37CBA20B /* libPods-FireTech.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireTech.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4D6E1DF0CC664E915721C2 /* Pods-FireTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTech.release.xcconfig"; path = "Target Support Files/Pods-FireTech/Pods-FireTech.release.xcconfig"; sourceTree = "<group>"; };
 		845C5B3B6498165932F43948 /* Pods-FireTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTech.debug.xcconfig"; path = "Target Support Files/Pods-FireTech/Pods-FireTech.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,8 +118,10 @@
 		13048B8828C263D0003657FD /* ViewControllerGroup */ = {
 			isa = PBXGroup;
 			children = (
-				1385258B291BE5D10042EDBF /* mainBarViewControllerGroup */,
-				13048B8928C2649D003657FD /* AuthorizationViewController.swift */,
+				13CF223B29D9B73900DBAD1E /* CalculationVC */,
+				13CC88B1299536B90056C90A /* MainVC */,
+				13CC88AD299536380056C90A /* AuthorizationVC */,
+				1385258B291BE5D10042EDBF /* mainBarVC */,
 			);
 			path = ViewControllerGroup;
 			sourceTree = "<group>";
@@ -125,12 +137,12 @@
 			path = ReadyMadeClasses;
 			sourceTree = "<group>";
 		};
-		1385258B291BE5D10042EDBF /* mainBarViewControllerGroup */ = {
+		1385258B291BE5D10042EDBF /* mainBarVC */ = {
 			isa = PBXGroup;
 			children = (
 				1385258C291BE6190042EDBF /* mainTabBarController.swift */,
 			);
-			path = mainBarViewControllerGroup;
+			path = mainBarVC;
 			sourceTree = "<group>";
 		};
 		13936F2C28B11CD3004C9943 = {
@@ -200,6 +212,105 @@
 				13048B8F28C269C5003657FD /* UIImageView+extension.swift */,
 			);
 			path = UIElementClass;
+			sourceTree = "<group>";
+		};
+		13CC88AD299536380056C90A /* AuthorizationVC */ = {
+			isa = PBXGroup;
+			children = (
+				13CC88B0299536660056C90A /* Model */,
+				13CC88AE299536470056C90A /* View */,
+				13CC88AF299536500056C90A /* Controller */,
+			);
+			path = AuthorizationVC;
+			sourceTree = "<group>";
+		};
+		13CC88AE299536470056C90A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13CF223F29D9B7DC00DBAD1E /* AuthorizationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13CC88AF299536500056C90A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13048B8928C2649D003657FD /* AuthorizationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		13CC88B0299536660056C90A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13CF224129D9B7EA00DBAD1E /* AuthorizationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13CC88B1299536B90056C90A /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				13CC88B2299536C70056C90A /* Model */,
+				13CC88B3299536EE0056C90A /* View */,
+				13CC88B4299536F90056C90A /* Controller */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		13CC88B2299536C70056C90A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13CC88B529953A350056C90A /* newsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13CC88B3299536EE0056C90A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13CC88B729953B430056C90A /* newsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13CC88B4299536F90056C90A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13B7E2052980547800D14AF3 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		13CF223B29D9B73900DBAD1E /* CalculationVC */ = {
+			isa = PBXGroup;
+			children = (
+				13CF223E29D9B76D00DBAD1E /* Controller */,
+				13CF223D29D9B76600DBAD1E /* View */,
+				13CF223C29D9B76100DBAD1E /* Model */,
+			);
+			path = CalculationVC;
+			sourceTree = "<group>";
+		};
+		13CF223C29D9B76100DBAD1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13CF223D29D9B76600DBAD1E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13CF223E29D9B76D00DBAD1E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		2D7D33D4712E9592B2C77250 /* Frameworks */ = {
@@ -377,16 +488,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				13048B8A28C2649D003657FD /* AuthorizationViewController.swift in Sources */,
+				13CF224229D9B7EA00DBAD1E /* AuthorizationModel.swift in Sources */,
 				1321503028BBAA1D00D40294 /* ErrorClass.swift in Sources */,
 				1321503228BBAF1A00D40294 /* UILabel+extension.swift in Sources */,
 				13048B8E28C2698A003657FD /* UIImage+extension.swift in Sources */,
 				1383DD7628D224A800DD257B /* DataUserDefaults.swift in Sources */,
+				13CF224029D9B7DC00DBAD1E /* AuthorizationView.swift in Sources */,
 				13936F3928B11CD3004C9943 /* AppDelegate.swift in Sources */,
 				13936F6A28B11D50004C9943 /* UIView+extension.swift in Sources */,
+				13B7E2062980547800D14AF3 /* MainViewController.swift in Sources */,
 				13048B9028C269C6003657FD /* UIImageView+extension.swift in Sources */,
 				1321503628BBAF7400D40294 /* UIButton+extension.swift in Sources */,
 				13092E4328BD1EF80006B213 /* CalculatedClass.swift in Sources */,
+				13CC88B829953B430056C90A /* newsView.swift in Sources */,
 				1321503428BBAF4C00D40294 /* UITextField+extension.swift in Sources */,
+				13CC88B629953A350056C90A /* newsModel.swift in Sources */,
 				13048B8C28C26918003657FD /* UIColor+extension.swift in Sources */,
 				13936F3B28B11CD3004C9943 /* SceneDelegate.swift in Sources */,
 				1385258D291BE6190042EDBF /* mainTabBarController.swift in Sources */,

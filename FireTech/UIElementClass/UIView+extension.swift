@@ -50,6 +50,7 @@ extension UIView {
             self.addSubview(sortingElements) // создаем каждый элемент из библиотеки
         }
     }
+    
 }
 class customViewContainer: UIView {
     override init(frame: CGRect) {

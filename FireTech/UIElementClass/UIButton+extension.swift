@@ -32,7 +32,6 @@ class appClearButton: UIButton {
         layer.borderWidth = 1
         layer.borderColor = UIColor.colorButton.cgColor
         layer.cornerRadius = 5
-        
 
     }
     
