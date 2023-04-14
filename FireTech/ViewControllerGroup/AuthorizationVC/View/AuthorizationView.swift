@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AuthorizationViewSetting: UIView {
+class AuthorizationViewSetting: UIView, UITextFieldDelegate {
     //MARK: Create UIKIt elements
     let appNameLabel = headingLabel()
     let viewContainer = customViewContainer()
@@ -17,6 +17,7 @@ class AuthorizationViewSetting: UIView {
     let loginButton = appActiveButton()
     let OfflineLoginButton = appClearButton()
     
+    weak var rootVC: AuthorizationViewController?
     
     //MARK: add elements to view
     func createElementToView(_ VC: UIView){
@@ -26,15 +27,20 @@ class AuthorizationViewSetting: UIView {
     
     //MARK: layout setting to view
     func createLayoutUIElement(_ VC: UIView) {
+        loginField.delegate = self
+        passwordField.delegate = self
+        
         appNameLabel.positionOfElements(nil, 0,
                                         VC.leadingAnchor, 20,
                                         VC.trailingAnchor, -20,
                                         viewContainer.topAnchor, -50)
+        
         //MARK: Задаем положение и размеры контейнера
         viewContainer.centerYAnchor.constraint(equalTo: VC.centerYAnchor).isActive = true
         viewContainer.centerXAnchor.constraint(equalTo: VC.centerXAnchor).isActive = true
         viewContainer.widthSize(UIScreen.main.bounds.width - 100)
         viewContainer.heightSize(UIScreen.main.bounds.width - 100)
+        
         //MARK: Настройка расположения поля ввода логина
         loginField.positionOfElements(viewContainer.topAnchor, ((loadWidthScreenSize()-100) - ((((loadWidthScreenSize()-100)/8)*4)+65))/2,
                                       viewContainer.leadingAnchor, 10,
@@ -65,4 +71,28 @@ class AuthorizationViewSetting: UIView {
         OfflineLoginButton.setTitle("Оффлайн режим", for: .normal)
         appNameLabel.headingfontStyle(String(loadScreenSize()))
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        loginField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        return true
+    }
+    
+    func addsButtonAction(){
+        loginButton.addTarget(self, action: #selector(loginsToApp), for: .touchDown)
+        OfflineLoginButton.addTarget(self, action: #selector(enteringOfflineMode), for: .touchDown)
+    }
+    
+    @objc func loginsToApp(){
+        print(loginField.text!)
+    }
+    @objc func enteringOfflineMode(){
+        let tabbarVC = mainTabBarController()
+        tabbarVC.modalTransitionStyle = .flipHorizontal
+        tabbarVC.modalPresentationStyle = .fullScreen
+        rootVC!.present(tabbarVC, animated: true, completion: nil)
+    }
+    
 }
+
+

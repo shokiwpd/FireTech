@@ -10,8 +10,7 @@ import UIKit
 
 
 class AuthorizationViewController: UIViewController {
-    //MARK: Объявление элементов интерфейса
-    
+    //MARK: Объявление классов MVC
     let classView = AuthorizationViewSetting()
     let classModel = AuthorizationModelSetting()
     
@@ -29,8 +28,10 @@ class AuthorizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //MARK: Задаем цвет фона
+        definesPresentationContext = true
         view.backgroundColor = UIColor.colorBackgroundView
-        
+        classView.addsButtonAction()
+        classView.rootVC = self
     }
 }
 
