@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 class AuthorizationModelSetting: UIView {
- 
-    
+    func saveDataFunction(_ login: String, _ password: String) {
+        
+    }
 }
    

@@ -22,7 +22,7 @@ class mainTabBarController: UITabBarController {
     
     private func selectItemBar(){
         viewControllers = [
-        settingTabBarElement(VC: MainViewController(), title: "Title")]
+        settingTabBarElement(VC: NewsViewController(), title: "Title")]
     }
     
     private func settingTabBarElement(VC: UIViewController, title: String) ->

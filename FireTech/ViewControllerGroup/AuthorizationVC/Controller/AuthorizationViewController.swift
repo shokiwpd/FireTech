@@ -32,6 +32,7 @@ class AuthorizationViewController: UIViewController {
         view.backgroundColor = UIColor.colorBackgroundView
         classView.addsButtonAction()
         classView.rootVC = self
+        
     }
 }
 

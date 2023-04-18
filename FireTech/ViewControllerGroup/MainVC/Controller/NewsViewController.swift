@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 
 //Основной контроллер
-class MainViewController: UIViewController {
+class NewsViewController: UIViewController {
     //Создаем элементы
     //Вызываем класс newsCollectionClass отвечающий за расположение и настройки UICollectionView
-    let newsCollectionView = newsCollectionClass()
+    
+    let classNewsView = newsView()
     
     override func loadView() {
         super.loadView()
@@ -25,9 +26,7 @@ class MainViewController: UIViewController {
     //Основные настройки после создания
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsCollectionView.delegate = self
-        newsCollectionView.dataSource = self
-        
+        classNewsView.rootVC = self
         view.backgroundColor = .green
     }
     /*

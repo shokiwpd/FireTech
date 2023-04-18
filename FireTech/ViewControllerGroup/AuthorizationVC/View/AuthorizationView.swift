@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 class AuthorizationViewSetting: UIView, UITextFieldDelegate {
+
+    weak var rootVC: AuthorizationViewController?
+
     //MARK: Create UIKIt elements
     let appNameLabel = headingLabel()
     let viewContainer = customViewContainer()
@@ -17,7 +20,6 @@ class AuthorizationViewSetting: UIView, UITextFieldDelegate {
     let loginButton = appActiveButton()
     let OfflineLoginButton = appClearButton()
     
-    weak var rootVC: AuthorizationViewController?
     
     //MARK: add elements to view
     func createElementToView(_ VC: UIView){
@@ -72,14 +74,27 @@ class AuthorizationViewSetting: UIView, UITextFieldDelegate {
         appNameLabel.headingfontStyle(String(loadScreenSize()))
     }
     
+    //MARK: textField delegate
+        // Настройка кнопки далее
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         loginField.resignFirstResponder()
         passwordField.resignFirstResponder()
         return true
     }
+        // При удалении текста будет замена на введеные раннее данные
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        loginField.text = "Ups" //<----Реакция нажатия на кнопку очистки
+        return false
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print(string) //<----- Обрабатывает введеный текст
+        print(range.location)// <----- Считает число введеных символов
+        return true
+    }
     
+    //MARK: action function
     func addsButtonAction(){
-        loginButton.addTarget(self, action: #selector(loginsToApp), for: .touchDown)
+        loginButton.addTarget(self, action: #selector(alert), for: .touchDown)
         OfflineLoginButton.addTarget(self, action: #selector(enteringOfflineMode), for: .touchDown)
     }
     
@@ -92,7 +107,15 @@ class AuthorizationViewSetting: UIView, UITextFieldDelegate {
         tabbarVC.modalPresentationStyle = .fullScreen
         rootVC!.present(tabbarVC, animated: true, completion: nil)
     }
-    
+     @objc func alert() {
+        let alert = UIAlertController()
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+         alert.addAction(UIAlertAction(title: "Next", style: .destructive, handler: { UIAlertAction in
+             self.enteringOfflineMode()
+         }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        rootVC!.present(alert, animated: true, completion: nil)
+    }
 }
 
 
