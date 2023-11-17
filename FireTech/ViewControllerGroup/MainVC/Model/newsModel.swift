@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import UIKit
 
-enum newsModel {
-    case newsTitle(String)
-    case newsText(String)
-    case newsImage(UIImage)
+class newsType {
+    let imageName = ["cellTestImage","cellTestImage 1"]
+    let headersText = ["Новое приложение","АЦ Урал"]
+    let newsText = ["Чего ждать от нового приложения? Косяков или продвижения?","Новые автоцистерны на базе УРАЛ. Новшество или хорошо забытое старое?"]
 }

@@ -32,25 +32,44 @@ extension UIView {
         //Настройка положения правой части элемента
         if let trailing = trailing {
             trailingAnchor.constraint(equalTo: trailing, constant: trailingConstant).isActive = true
+            
         }
         //Настройка положения нижней части элемента
         if let bottom = bottom {
             bottomAnchor.constraint(equalTo: bottom, constant: bottomConstant).isActive = true
         }
     }
+    //Изменение ширины объекта
     func widthSize(_ w: CGFloat) {
         self.widthAnchor.constraint(equalToConstant: w).isActive = true
     }
+    //Изменение высоты объекта
     func heightSize(_ h: CGFloat) {
         self.heightAnchor.constraint(equalToConstant: h).isActive = true
     }
+    
     //Создание элементов на контроллере
     func creatingElements(_ elementName: [UIView]){ //Создаем функцию с формой для указания элементов интерфейса
         for sortingElements in elementName { // сортируем из библиотеки каждый эелемент
             self.addSubview(sortingElements) // создаем каждый элемент из библиотеки
         }
     }
+    //Создание эффекта размытия
+    public func createBlurEffect(){
+         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+         let blurEffectView = UIVisualEffectView(effect: blurEffect)
+         blurEffectView.frame = self.bounds
+         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+         self.addSubview(blurEffectView)
+     }
     
+}
+class calceulationView: UIView {
+    func calculationView(){
+        self.backgroundColor = .red
+        self.layer.cornerRadius = 10
+        self.layer.masksToBounds = true
+    }
 }
 class customViewContainer: UIView {
     override init(frame: CGRect) {
@@ -63,4 +82,5 @@ class customViewContainer: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+   
 }

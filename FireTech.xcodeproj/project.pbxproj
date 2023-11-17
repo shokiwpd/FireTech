@@ -34,6 +34,11 @@
 		13CF224029D9B7DC00DBAD1E /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF223F29D9B7DC00DBAD1E /* AuthorizationView.swift */; };
 		13CF224229D9B7EA00DBAD1E /* AuthorizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CF224129D9B7EA00DBAD1E /* AuthorizationModel.swift */; };
 		9D88A2908134914A83669479 /* libPods-FireTech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2325066A6344FBCE37CBA20B /* libPods-FireTech.a */; };
+		F5DC1C812A6D9B8600D5C204 /* calculationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1C802A6D9B8600D5C204 /* calculationModel.swift */; };
+		F5DC1C832A6D9B9500D5C204 /* calculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1C822A6D9B9500D5C204 /* calculationView.swift */; };
+		F5DC1C852A6D9BA700D5C204 /* calculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1C842A6D9BA700D5C204 /* calculationViewController.swift */; };
+		F5E044792B02648600D8B532 /* mainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E044782B02648600D8B532 /* mainTabBarView.swift */; };
+		F5E0447B2B0264AB00D8B532 /* mainTabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0447A2B0264AB00D8B532 /* mainTabBarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +92,11 @@
 		2325066A6344FBCE37CBA20B /* libPods-FireTech.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireTech.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4D6E1DF0CC664E915721C2 /* Pods-FireTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTech.release.xcconfig"; path = "Target Support Files/Pods-FireTech/Pods-FireTech.release.xcconfig"; sourceTree = "<group>"; };
 		845C5B3B6498165932F43948 /* Pods-FireTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTech.debug.xcconfig"; path = "Target Support Files/Pods-FireTech/Pods-FireTech.debug.xcconfig"; sourceTree = "<group>"; };
+		F5DC1C802A6D9B8600D5C204 /* calculationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculationModel.swift; sourceTree = "<group>"; };
+		F5DC1C822A6D9B9500D5C204 /* calculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculationView.swift; sourceTree = "<group>"; };
+		F5DC1C842A6D9BA700D5C204 /* calculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculationViewController.swift; sourceTree = "<group>"; };
+		F5E044782B02648600D8B532 /* mainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabBarView.swift; sourceTree = "<group>"; };
+		F5E0447A2B0264AB00D8B532 /* mainTabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabBarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +128,7 @@
 		13048B8828C263D0003657FD /* ViewControllerGroup */ = {
 			isa = PBXGroup;
 			children = (
-				13CF223B29D9B73900DBAD1E /* CalculationVC */,
+				F5DC1C7A2A6D99DD00D5C204 /* СalculationVC */,
 				13CC88B1299536B90056C90A /* MainVC */,
 				13CC88AD299536380056C90A /* AuthorizationVC */,
 				1385258B291BE5D10042EDBF /* mainBarVC */,
@@ -140,7 +150,9 @@
 		1385258B291BE5D10042EDBF /* mainBarVC */ = {
 			isa = PBXGroup;
 			children = (
-				1385258C291BE6190042EDBF /* mainTabBarController.swift */,
+				F501221E2B0263A10049A51C /* Controller */,
+				F501221D2B0263950049A51C /* View */,
+				F501221C2B0263880049A51C /* Model */,
 			);
 			path = mainBarVC;
 			sourceTree = "<group>";
@@ -282,37 +294,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		13CF223B29D9B73900DBAD1E /* CalculationVC */ = {
-			isa = PBXGroup;
-			children = (
-				13CF223E29D9B76D00DBAD1E /* Controller */,
-				13CF223D29D9B76600DBAD1E /* View */,
-				13CF223C29D9B76100DBAD1E /* Model */,
-			);
-			path = CalculationVC;
-			sourceTree = "<group>";
-		};
-		13CF223C29D9B76100DBAD1E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		13CF223D29D9B76600DBAD1E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		13CF223E29D9B76D00DBAD1E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		2D7D33D4712E9592B2C77250 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +309,64 @@
 				5A4D6E1DF0CC664E915721C2 /* Pods-FireTech.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F501221C2B0263880049A51C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5E0447A2B0264AB00D8B532 /* mainTabBarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F501221D2B0263950049A51C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5E044782B02648600D8B532 /* mainTabBarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F501221E2B0263A10049A51C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1385258C291BE6190042EDBF /* mainTabBarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F5DC1C7A2A6D99DD00D5C204 /* СalculationVC */ = {
+			isa = PBXGroup;
+			children = (
+				F5DC1C7B2A6D9A1400D5C204 /* Model */,
+				F5DC1C7C2A6D9A2000D5C204 /* View */,
+				F5DC1C7D2A6D9A2A00D5C204 /* Controller */,
+			);
+			path = "СalculationVC";
+			sourceTree = "<group>";
+		};
+		F5DC1C7B2A6D9A1400D5C204 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5DC1C802A6D9B8600D5C204 /* calculationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F5DC1C7C2A6D9A2000D5C204 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5DC1C822A6D9B9500D5C204 /* calculationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5DC1C7D2A6D9A2A00D5C204 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5DC1C842A6D9BA700D5C204 /* calculationViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,7 +434,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					13936F3428B11CD3004C9943 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -488,18 +527,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				13048B8A28C2649D003657FD /* AuthorizationViewController.swift in Sources */,
+				F5DC1C812A6D9B8600D5C204 /* calculationModel.swift in Sources */,
 				13CF224229D9B7EA00DBAD1E /* AuthorizationModel.swift in Sources */,
 				1321503028BBAA1D00D40294 /* ErrorClass.swift in Sources */,
 				1321503228BBAF1A00D40294 /* UILabel+extension.swift in Sources */,
+				F5DC1C852A6D9BA700D5C204 /* calculationViewController.swift in Sources */,
 				13048B8E28C2698A003657FD /* UIImage+extension.swift in Sources */,
 				1383DD7628D224A800DD257B /* DataUserDefaults.swift in Sources */,
 				13CF224029D9B7DC00DBAD1E /* AuthorizationView.swift in Sources */,
+				F5E0447B2B0264AB00D8B532 /* mainTabBarModel.swift in Sources */,
 				13936F3928B11CD3004C9943 /* AppDelegate.swift in Sources */,
 				13936F6A28B11D50004C9943 /* UIView+extension.swift in Sources */,
 				13B7E2062980547800D14AF3 /* NewsViewController.swift in Sources */,
 				13048B9028C269C6003657FD /* UIImageView+extension.swift in Sources */,
+				F5DC1C832A6D9B9500D5C204 /* calculationView.swift in Sources */,
 				1321503628BBAF7400D40294 /* UIButton+extension.swift in Sources */,
 				13092E4328BD1EF80006B213 /* CalculatedClass.swift in Sources */,
+				F5E044792B02648600D8B532 /* mainTabBarView.swift in Sources */,
 				13CC88B829953B430056C90A /* newsView.swift in Sources */,
 				1321503428BBAF4C00D40294 /* UITextField+extension.swift in Sources */,
 				13CC88B629953A350056C90A /* newsModel.swift in Sources */,
@@ -590,6 +634,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -650,6 +695,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

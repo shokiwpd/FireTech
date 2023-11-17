@@ -21,6 +21,7 @@ class loginTextField: UITextField {
         textContentType = .emailAddress
         keyboardType = .emailAddress
         clearButtonMode = .always
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {

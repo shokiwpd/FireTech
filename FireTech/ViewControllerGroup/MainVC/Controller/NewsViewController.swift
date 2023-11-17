@@ -10,6 +10,8 @@ import UIKit
 
 //Основной контроллер
 class NewsViewController: UIViewController {
+   
+    
     //Создаем элементы
     //Вызываем класс newsCollectionClass отвечающий за расположение и настройки UICollectionView
     
@@ -17,16 +19,19 @@ class NewsViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+        classNewsView.addViewCollection(view)
     }
     
     //Расстановка элементов на контроллере
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    
+    override func viewDidLayoutSubviews() {
+        classNewsView.layoutViewCollection(view)
     }
     //Основные настройки после создания
     override func viewDidLoad() {
         super.viewDidLoad()
         classNewsView.rootVC = self
+
         view.backgroundColor = .green
     }
     /*
