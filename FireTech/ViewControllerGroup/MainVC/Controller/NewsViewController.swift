@@ -17,17 +17,17 @@ class NewsViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-    }
-    
-    //Расстановка элементов на контроллере
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+        classNewsView.addViewCollection(view)
     }
     //Основные настройки после создания
     override func viewDidLoad() {
         super.viewDidLoad()
         classNewsView.rootVC = self
-        view.backgroundColor = .green
+        classNewsView.layoutViewCollection(view)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.navigationItem.title = "Главная"
     }
     /*
      Предварительно на данном экране как и в первой версии

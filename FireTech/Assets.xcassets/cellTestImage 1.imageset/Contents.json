@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "1667447679_1-sportishka-com-p-pozharnaya-mashina-ural-pinterest-1.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

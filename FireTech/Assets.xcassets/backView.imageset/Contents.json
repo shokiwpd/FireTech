@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "maska_zashchitnaya_polnolicevaya_msa_advantage_3231_bolshaya.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

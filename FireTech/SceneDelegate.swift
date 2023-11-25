@@ -18,7 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let openAppView = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: openAppView)
-        window.rootViewController = AuthorizationViewController()
+        let navi = UINavigationController(rootViewController: mainTabBarController())
+        navi.navigationBar.prefersLargeTitles = true
+        window.rootViewController = navi
         self.window = window
         window.makeKeyAndVisible()
     }

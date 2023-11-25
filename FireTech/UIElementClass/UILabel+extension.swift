@@ -52,4 +52,29 @@ class headingLabel:UILabel {
         }
 }
 
+class headerLabel: UILabel {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        textColor = .colorText
+        font = UIFont.systemFont(ofSize: 30)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+}
+class initialTextLabel: UILabel {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        textColor = .colorText
+        font = UIFont.systemFont(ofSize: 15)
+        numberOfLines = 2
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+}
 

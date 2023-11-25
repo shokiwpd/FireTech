@@ -21,11 +21,32 @@ class loginTextField: UITextField {
         textContentType = .emailAddress
         keyboardType = .emailAddress
         clearButtonMode = .always
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+class fieldForCalculations: UITextField {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        textColor = .colorText
+        borderStyle = .roundedRect 
+        backgroundColor = .colorTextField
+        textContentType = .flightNumber
+        keyboardType = .decimalPad
+        clearButtonMode = .whileEditing
+        translatesAutoresizingMaskIntoConstraints = false
+        widthSize(100)
+
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
 }
 //класс формы для пароля
