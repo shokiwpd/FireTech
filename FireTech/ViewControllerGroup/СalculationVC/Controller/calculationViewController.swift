@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class calculationViewController: UIViewController, UIGestureRecognizerDelegate {
+class calculationViewController: UIViewController {
     
     let classView = calculationView()
     
@@ -17,32 +17,18 @@ class calculationViewController: UIViewController, UIGestureRecognizerDelegate {
         classView.addElementToController(view)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        classView.createLayoutUIElement(view)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        classView.createLayoutUIElement(view)
         classView.rootVC = self
         classView.checkData()
         classView.actionFunc()
         view.backgroundColor = .colorBackgroundView
-        assignbackground()
-        
+        classView.assignbackground(view)
+
     }
-    func assignbackground(){
-        let background = UIImage(named: "backView")
-        var imageView : UIImageView!
-        imageView = UIImageView(frame: view.bounds)
-        imageView.contentMode =  UIView.ContentMode.right
-        imageView.clipsToBounds = true
-        imageView.image = background
-        imageView.center = view.center
-        view.addSubview(imageView)
-        self.view.sendSubviewToBack(imageView)
-    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tabBarController?.navigationItem.title = "Расчеты"

@@ -60,7 +60,7 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     var pressureFF_3_textField = fieldForCalculations() //
     lazy var pressureFF_4_textField = fieldForCalculations() // Не активны пока не требуются
     lazy var pressureFF_5_textField = fieldForCalculations() //
-    var timeField = loginTextField()
+    var timeField = timeTextFieldClass()
     
     //MARK: Вью для элементов расчетов (Изменить в кастом файле)
     var numbersFFView = calculationViewContainer()
@@ -250,16 +250,17 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     @objc func printTest() {
         print("test")
     }
-    
-    func calculationsTime(time: Date, toTime: Int)-> String!{
-        let TimeConvert = Double(time.timeIntervalSince1970) + Double(toTime * 60)
-        let resultTime = Date(timeIntervalSince1970: TimeConvert)
-        let timeFormat = DateFormatter()
-        timeFormat.dateFormat = "HH:mm"
-        let stringTime = timeFormat.string(from: resultTime)
-        return stringTime
+    func assignbackground(_ views: UIView){
+        let background = UIImage(named: "backView")
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: views.bounds)
+        imageView.contentMode =  UIView.ContentMode.right
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = views.center
+        views.addSubview(imageView)
+        views.sendSubviewToBack(imageView)
     }
-    
     func checkData() {
         //MARK: Временное решения для проверки памяти на наличие данных
         func alerts() {
@@ -279,6 +280,14 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
             alerts()
         }
     }
+}
+public func convertDateToString(time: Date, toTime: Int)-> String!{
+    let TimeConvert = Double(time.timeIntervalSince1970)// + Double(toTime * 60)
+    let resultTime = Date(timeIntervalSince1970: TimeConvert)
+    let timeFormat = DateFormatter()
+    timeFormat.dateFormat = "HH:mm"
+    let stringTime = timeFormat.string(from: resultTime)
+    return stringTime
 }
 
 
