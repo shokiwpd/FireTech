@@ -25,7 +25,6 @@ class fieldForCalculations: UITextField {
         translatesAutoresizingMaskIntoConstraints = false
         hideKeyboard()
         widthSize(100)
-        //        hideKeyboard.hideKeyboard()
     }
     private func hideKeyboard() {
         let toolBar = hideKeyboardBar()
@@ -94,7 +93,7 @@ class timeTextFieldClass: UITextField, UITextFieldDelegate {
     
     @objc func doneButtonAction(_ sender: UIBarButtonItem){
         endEditing(true)
-        text = convertDateToString(time: timePicker.date, toTime: 0)
+        text = convertDateToString(time: timePicker.date)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

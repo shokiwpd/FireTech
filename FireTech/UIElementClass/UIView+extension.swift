@@ -67,22 +67,29 @@ extension UIView {
 class calculationViewContainer: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .clear
+        backgroundColor = .colorBackgroundView
         layer.cornerRadius = 10
-        layer.masksToBounds = true
-        createBlurEffect()
+        layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        layer.shadowRadius = 8
+        layer.shadowOpacity = 0.5
+        clipsToBounds = true
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.shadowColorBackgroundView.cgColor
+        print("Action")
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
 class customViewContainer: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .secondarySystemFill
         layer.cornerRadius = 27
+        
     }
     
     required init?(coder: NSCoder) {

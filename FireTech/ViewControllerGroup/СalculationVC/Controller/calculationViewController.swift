@@ -25,7 +25,6 @@ class calculationViewController: UIViewController {
         classView.checkData()
         classView.actionFunc()
         view.backgroundColor = .colorBackgroundView
-        classView.assignbackground(view)
 
     }
     

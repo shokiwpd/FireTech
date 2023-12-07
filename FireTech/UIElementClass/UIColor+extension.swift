@@ -33,6 +33,14 @@ extension UIColor {
             return customWhiteColor
         }
     }
+    static let shadowColorBackgroundView = UIColor { (trat: UITraitCollection) -> UIColor in
+        if trat.userInterfaceStyle == .dark {
+            return customWhiteColor
+        } else {
+            return customBlackColor
+        }
+    }
+
     static let colorText = UIColor { (trat: UITraitCollection) -> UIColor in
         if trat.userInterfaceStyle == .dark {
             return customWhiteColor

@@ -32,10 +32,8 @@ class newsView: UIView  {
 class newsCollection: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //MARK: создаем ссылку на контроллер в котором будет отображаться UICollectionView
     weak var newsCollectionView: NewsViewController?
-    let classModel = newsType()
-    var newsHeaderAPI = newsType().headersText
-    var newsTextAPI = newsType().newsText
-    var newsImageAPI = newsType().imageName
+    let newsDecodeJSON: [newsDecodable] = try! JSONDecoder().decode([newsDecodable].self, from: newsJSONData)
+    
     init(){
         
         //MARK: инициализируем возможность графической настройки UICollectionView
@@ -61,14 +59,14 @@ class newsCollection: UICollectionView, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newsHeaderAPI.count
+        return newsDecodeJSON.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: newsCollectionCell.cellName, for: indexPath) as! newsCollectionCell
-        cell.headerNews.text = newsHeaderAPI[indexPath.row]
-        cell.newsImage.image = UIImage(named:newsImageAPI[indexPath.row])!
-        cell.newsFirstText.text = newsTextAPI[indexPath.row]
+        cell.headerNews.text = newsDecodeJSON[indexPath.row].newsTitle
+        cell.newsImage.image = UIImage(named:newsDecodeJSON[indexPath.row].newsImage)!
+        cell.newsFirstText.text = newsDecodeJSON[indexPath.row].newsText
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -80,8 +78,6 @@ class newsCollection: UICollectionView, UICollectionViewDelegate, UICollectionVi
 class newsCollectionCell: UICollectionViewCell {
     
     static let cellName = "newsCollectionCell"
-    
-    let getNewsApi = newsType()
     
     //MARK: Создаем элементы которые будут отображаться в ячейке
     let newsImage = UIImageView()

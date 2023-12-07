@@ -31,6 +31,10 @@
 		13CC88B629953A350056C90A /* newsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC88B529953A350056C90A /* newsModel.swift */; };
 		13CC88B829953B430056C90A /* newsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC88B729953B430056C90A /* newsView.swift */; };
 		9D88A2908134914A83669479 /* libPods-FireTech.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2325066A6344FBCE37CBA20B /* libPods-FireTech.a */; };
+		F5CE47A82B1C99C0002869F2 /* documentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE47A72B1C99C0002869F2 /* documentViewController.swift */; };
+		F5CE47AA2B1C99CC002869F2 /* documentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE47A92B1C99CC002869F2 /* documentView.swift */; };
+		F5CE47AC2B1C99E0002869F2 /* documentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE47AB2B1C99E0002869F2 /* documentModel.swift */; };
+		F5CE47AE2B21F604002869F2 /* newsDataJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = F5CE47AD2B21F604002869F2 /* newsDataJSON.json */; };
 		F5DC1C812A6D9B8600D5C204 /* calculationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1C802A6D9B8600D5C204 /* calculationModel.swift */; };
 		F5DC1C832A6D9B9500D5C204 /* calculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1C822A6D9B9500D5C204 /* calculationView.swift */; };
 		F5DC1C852A6D9BA700D5C204 /* calculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1C842A6D9BA700D5C204 /* calculationViewController.swift */; };
@@ -87,6 +91,10 @@
 		5A4D6E1DF0CC664E915721C2 /* Pods-FireTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTech.release.xcconfig"; path = "Target Support Files/Pods-FireTech/Pods-FireTech.release.xcconfig"; sourceTree = "<group>"; };
 		845C5B3B6498165932F43948 /* Pods-FireTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireTech.debug.xcconfig"; path = "Target Support Files/Pods-FireTech/Pods-FireTech.debug.xcconfig"; sourceTree = "<group>"; };
 		F58858D22B12625000BEEF15 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F5CE47A72B1C99C0002869F2 /* documentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentViewController.swift; sourceTree = "<group>"; };
+		F5CE47A92B1C99CC002869F2 /* documentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentView.swift; sourceTree = "<group>"; };
+		F5CE47AB2B1C99E0002869F2 /* documentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentModel.swift; sourceTree = "<group>"; };
+		F5CE47AD2B21F604002869F2 /* newsDataJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = newsDataJSON.json; sourceTree = "<group>"; };
 		F5DC1C802A6D9B8600D5C204 /* calculationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculationModel.swift; sourceTree = "<group>"; };
 		F5DC1C822A6D9B9500D5C204 /* calculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculationView.swift; sourceTree = "<group>"; };
 		F5DC1C842A6D9BA700D5C204 /* calculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculationViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 		13048B8828C263D0003657FD /* ViewControllerGroup */ = {
 			isa = PBXGroup;
 			children = (
+				F5CE47A32B1C9966002869F2 /* documentVC */,
 				F5DC1C7A2A6D99DD00D5C204 /* СalculationVC */,
 				13CC88B1299536B90056C90A /* MainVC */,
 				1385258B291BE5D10042EDBF /* mainBarVC */,
@@ -137,6 +146,7 @@
 				13092E4028BD1A790006B213 /* UserProfileClass.swift */,
 				13092E4228BD1EF80006B213 /* CalculatedClass.swift */,
 				1383DD7528D224A800DD257B /* DataUserDefaults.swift */,
+				F5CE47AD2B21F604002869F2 /* newsDataJSON.json */,
 			);
 			path = ReadyMadeClasses;
 			sourceTree = "<group>";
@@ -295,6 +305,40 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F5CE47A32B1C9966002869F2 /* documentVC */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE47A62B1C9997002869F2 /* Model */,
+				F5CE47A52B1C9988002869F2 /* View */,
+				F5CE47A42B1C997A002869F2 /* Controller */,
+			);
+			path = documentVC;
+			sourceTree = "<group>";
+		};
+		F5CE47A42B1C997A002869F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE47A72B1C99C0002869F2 /* documentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F5CE47A52B1C9988002869F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE47A92B1C99CC002869F2 /* documentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5CE47A62B1C9997002869F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE47AB2B1C99E0002869F2 /* documentModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F5DC1C7A2A6D99DD00D5C204 /* СalculationVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +480,7 @@
 			files = (
 				1385258F291C25300042EDBF /* Podfile in Resources */,
 				13936F4528B11CD6004C9943 /* LaunchScreen.storyboard in Resources */,
+				F5CE47AE2B21F604002869F2 /* newsDataJSON.json in Resources */,
 				13936F4228B11CD6004C9943 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,12 +538,15 @@
 				13048B8E28C2698A003657FD /* UIImage+extension.swift in Sources */,
 				1383DD7628D224A800DD257B /* DataUserDefaults.swift in Sources */,
 				F5E0447B2B0264AB00D8B532 /* mainTabBarModel.swift in Sources */,
+				F5CE47AC2B1C99E0002869F2 /* documentModel.swift in Sources */,
+				F5CE47AA2B1C99CC002869F2 /* documentView.swift in Sources */,
 				13936F3928B11CD3004C9943 /* AppDelegate.swift in Sources */,
 				13936F6A28B11D50004C9943 /* UIView+extension.swift in Sources */,
 				13B7E2062980547800D14AF3 /* NewsViewController.swift in Sources */,
 				13048B9028C269C6003657FD /* UIImageView+extension.swift in Sources */,
 				F5DC1C832A6D9B9500D5C204 /* calculationView.swift in Sources */,
 				1321503628BBAF7400D40294 /* UIButton+extension.swift in Sources */,
+				F5CE47A82B1C99C0002869F2 /* documentViewController.swift in Sources */,
 				13092E4328BD1EF80006B213 /* CalculatedClass.swift in Sources */,
 				F5E044792B02648600D8B532 /* mainTabBarView.swift in Sources */,
 				13CC88B829953B430056C90A /* newsView.swift in Sources */,

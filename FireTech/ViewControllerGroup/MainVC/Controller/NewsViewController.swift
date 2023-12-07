@@ -25,10 +25,12 @@ class NewsViewController: UIViewController {
         classNewsView.rootVC = self
         classNewsView.layoutViewCollection(view)
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tabBarController?.navigationItem.title = "Главная"
     }
+    
     /*
      Предварительно на данном экране как и в первой версии
      будет расположена новостная лента

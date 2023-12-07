@@ -70,6 +70,7 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     var calculationWorkButton: appActiveButton = {
         var button = appActiveButton()
         button.setTitle("Рассчет", for: .normal)
+        
         return button
     }()// Под вопросом полный функционал
     
@@ -250,17 +251,7 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     @objc func printTest() {
         print("test")
     }
-    func assignbackground(_ views: UIView){
-        let background = UIImage(named: "backView")
-        var imageView : UIImageView!
-        imageView = UIImageView(frame: views.bounds)
-        imageView.contentMode =  UIView.ContentMode.right
-        imageView.clipsToBounds = true
-        imageView.image = background
-        imageView.center = views.center
-        views.addSubview(imageView)
-        views.sendSubviewToBack(imageView)
-    }
+    
     func checkData() {
         //MARK: Временное решения для проверки памяти на наличие данных
         func alerts() {
@@ -281,8 +272,8 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
         }
     }
 }
-public func convertDateToString(time: Date, toTime: Int)-> String!{
-    let TimeConvert = Double(time.timeIntervalSince1970)// + Double(toTime * 60)
+public func convertDateToString(time: Date)-> String!{
+    let TimeConvert = Double(time.timeIntervalSince1970)
     let resultTime = Date(timeIntervalSince1970: TimeConvert)
     let timeFormat = DateFormatter()
     timeFormat.dateFormat = "HH:mm"
