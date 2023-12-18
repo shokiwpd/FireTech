@@ -68,16 +68,18 @@ class calculationViewContainer: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .colorBackgroundView
+        shadowView()
+    }
+    func shadowView() {
         layer.cornerRadius = 10
         layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        layer.shadowRadius = 8
+        layer.shadowRadius = 10
         layer.shadowOpacity = 0.5
         clipsToBounds = true
         layer.masksToBounds = false
-        layer.shadowColor = UIColor.shadowColorBackgroundView.cgColor
+        layer.shadowColor = UIColor.gray.cgColor
         print("Action")
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

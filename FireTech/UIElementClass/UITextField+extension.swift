@@ -26,6 +26,8 @@ class fieldForCalculations: UITextField {
         hideKeyboard()
         widthSize(100)
     }
+    
+    
     private func hideKeyboard() {
         let toolBar = hideKeyboardBar()
         inputAccessoryView = toolBar
@@ -43,7 +45,38 @@ class fieldForCalculations: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
+class fieldForCalculationsSetting: UITextField {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        textColor = .colorText
+        borderStyle = .roundedRect
+        backgroundColor = .colorTextField
+        textContentType = .flightNumber
+        keyboardType = .decimalPad
+        clearButtonMode = .whileEditing
+        translatesAutoresizingMaskIntoConstraints = false
+        hideKeyboard()
+    }
+    
+    
+    private func hideKeyboard() {
+        let toolBar = hideKeyboardBar()
+        inputAccessoryView = toolBar
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                         target: self,
+                                         action: #selector(doneButtonAction(_:)))
+        toolBar.setItems([doneButton], animated: true)
+        toolBar.barStyle = .black
+    }
+    
+    @objc func doneButtonAction(_ sender: UIBarButtonItem){
+        endEditing(true)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 //MARK: Создание toolBar'а для форм ввода текста
 class hideKeyboardBar: UIToolbar {
     override init(frame: CGRect) {

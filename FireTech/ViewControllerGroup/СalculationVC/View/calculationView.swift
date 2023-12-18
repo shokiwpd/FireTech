@@ -12,49 +12,19 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     
     weak var rootVC: calculationViewController?
     var classModel = prikaz640()
+    
     //MARK: Label var - переменные текстового окна
-    var nameFF_1_label:UILabel = {
-        let label = UILabel()
-        label.text = "Ф.И. ГДЗ 1"
-        label.textColor = .colorText
-        label.isUserInteractionEnabled = true
-        return label
-    }()
-    var nameFF_2_label:UILabel = {
-        let label = UILabel()
-        label.text = "Ф.И. ГДЗ 2"
-        label.textColor = .colorText
-        label.isUserInteractionEnabled = true
-        return label
-    }() // Всегда активные элементы
-    var nameFF_3_label:UILabel = {
-        let label = UILabel()
-        label.text = "Ф.И. ГДЗ 3"
-        label.textColor = .colorText
-        label.isUserInteractionEnabled = true
-        return label
-    }() //
-    lazy var nameFF_4_label:UILabel = {
-        let label = UILabel()
-        label.text = "Ф.И. ГДЗ 4"
-        label.textColor = .colorText
-        label.isUserInteractionEnabled = true
-        return label
-    }() // не активны пока они не требуются
-    lazy var nameFF_5_label:UILabel = {
-        let label = UILabel()
-        label.text = "Ф.И. ГДЗ 5"
-        label.textColor = .colorText
-        label.isUserInteractionEnabled = true
-        return label
-    }()
-    var timeLabel:UILabel = {
-        var label = UILabel()
-        label.text = "Время включения:"
-        return label
-    }()
+    var nameFF_1_label = calculationLabel()
+    var nameFF_2_label = calculationLabel()// Всегда активные элементы
+    var nameFF_3_label = calculationLabel()
+    
+    lazy var nameFF_4_label = calculationLabel()// не активны пока они не требуются
+    lazy var nameFF_5_label = calculationLabel()
+    var titleName = calculationLabel() // [Заголовок]
+    var timeLabel = calculationLabel()
     
     //MARK: textField var - переменные поля для ввода текст(изменить в кастом файле)
+    // Осталось настроить все фильтры для ввода текста
     var pressureFF_1_textField = fieldForCalculations() //
     var pressureFF_2_textField = fieldForCalculations() // Всегда активные эелементы
     var pressureFF_3_textField = fieldForCalculations() //
@@ -70,30 +40,70 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     var calculationWorkButton: appActiveButton = {
         var button = appActiveButton()
         button.setTitle("Рассчет", for: .normal)
-        
         return button
-    }()// Под вопросом полный функционал
+    }()
+    var settingButton: appActiveButton = { //Для этой кнопки надо сделать отдельный дизайн
+        let button = appActiveButton()
+        button.setTitle("=", for: .normal)
+        return button
+    }()
+    // Под вопросом полный функционал
     
-    //MARK: view var - поле которое будет появляться при первом запуске и его составляющие
-    var firstSettingView = UIView()
-    var volumeOfTheCylinder = UITextField()
-    var numberOfCylinders = UITextField()
-    var numberOfFirefighters = 5
-    var saveDataButton = appActiveButton()
-    //------------------------
-    //|      UItextField 1   |
-    //|      UItextField 2   | - Примерный вид окна чтобы не забыть
-    //|      UItextField 3   |
-    //|        UIButton      |
-    //------------------------
+    //MARK: view var - поле которое будет появляться при первом запуске и его составляющие, либо при вызове настроек
+    var settingView = calculationViewContainer()
+    var numberOfFirefighters = returnNumberOfFirefighters() //Int(UITextField.text)!
+    var numberOfFirefightersTextField = fieldForCalculationsSetting()
+    var numberOfCylinders = fieldForCalculationsSetting()
+    var volumeOfAir =  fieldForCalculationsSetting()
+    var saveDataButton = appActiveButton()// Одно из двух. Либо крестик, либо кнопка сохранить
     
-    //Данная функция содает элементы на на контроллере в зависимости от числа пожарных
+    //MARK: Данная функция содает элементы на на контроллере в зависимости от числа пожарных
+    
+    func settingViewFunc(_ VC: UIView) {
+        settingView.alpha = 0
+        VC.creatingElements([settingView])
+        settingView.creatingElements([numberOfFirefightersTextField,
+                                      numberOfCylinders,
+                                      volumeOfAir,
+                                      saveDataButton])
+        settingView.translatesAutoresizingMaskIntoConstraints = false
+        settingView.centerXAnchor.constraint(equalTo: VC.centerXAnchor).isActive = true
+        settingView.centerYAnchor.constraint(equalTo: VC.centerYAnchor).isActive = true
+        settingView.widthSize(loadWidthScreenSize() * 0.6)
+        settingView.heightSize(loadWidthScreenSize() * 0.6)
+        //---Временные настройки--
+        numberOfFirefightersTextField.placeholder = "Количество ГДЗ"
+        numberOfCylinders.placeholder = "Количество баллонов"
+        volumeOfAir.placeholder = "Объем баллона"
+        saveDataButton.setTitle("Сохранить", for: .normal)
+        //-----Настройки расположения элементов
+        numberOfFirefightersTextField.positionOfElements(settingView.topAnchor, 5,
+                                                         settingView.leadingAnchor, 5,
+                                                         settingView.trailingAnchor, -5,
+                                                         nil, 0)
+        numberOfCylinders.positionOfElements(numberOfFirefightersTextField.bottomAnchor, ((loadWidthScreenSize() * 0.6) / 10.0),
+                                             settingView.leadingAnchor, 5,
+                                             settingView.trailingAnchor, -5,
+                                             nil, 0)
+        volumeOfAir.positionOfElements(numberOfCylinders.bottomAnchor, ((loadWidthScreenSize() * 0.6) / 10.0),
+                                       settingView.leadingAnchor, 5,
+                                       settingView.trailingAnchor, -5,
+                                       nil, 0)
+        saveDataButton.positionOfElements(nil, 0,
+                                          settingView.leadingAnchor, 5,
+                                          settingView.trailingAnchor, -5,
+                                          settingView.bottomAnchor, -5)
+        
+    }
+    
     func addElementToController(_ VC: UIView) {
         VC.creatingElements([numbersFFView,
                              timeView,
                              timeLabel,
                              timeField,
-                             calculationWorkButton])
+                             calculationWorkButton,
+                             titleName,
+                             settingButton])
         
         switch numberOfFirefighters{
         case 5:
@@ -117,6 +127,15 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     //Функция которая распределяет элементы на контроллере согласно числу пожарных
     //Как и в случае создания объектов на экране, мы расставляем элементы в нужных местах
     func createLayoutUIElement(_ VC: UIView){
+        //MARK: Присвоение названи лейблам
+        nameFF_1_label.text = "Ф.И. ГДЗ 1"
+        nameFF_2_label.text = "Ф.И. ГДЗ 2"
+        nameFF_3_label.text = "Ф.И. ГДЗ 3"
+        nameFF_4_label.text = "Ф.И. ГДЗ 4"
+        nameFF_5_label.text = "Ф.И. ГДЗ 5"
+        titleName.text =  "Ф.И. Газодымозащитника"
+        titleName.textAlignment = .center
+        timeLabel.text = "Время включения:"
         //MARK: Расположение Вью для элементов
         numbersFFView.positionOfElements(VC.topAnchor, 200,
                                          VC.leadingAnchor, 10,
@@ -126,7 +145,16 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
                                     numbersFFView.leadingAnchor, 0,
                                     numbersFFView.trailingAnchor, 0,
                                     nil, 0)
-        
+        titleName.positionOfElements(numbersFFView.topAnchor, 5,
+                                     numbersFFView.leadingAnchor, 5,
+                                     settingButton.leadingAnchor, 5,
+                                     nil, 0)
+        settingButton.positionOfElements(titleName.topAnchor, 0,
+                                         nil, 0,
+                                         numbersFFView.trailingAnchor, -5,
+                                         nil, 0)
+        settingButton.heightSize(30)
+        settingButton.widthSize(30)
         //MARK: Располодение форм для ввода текста и названия ячеек
         switch numberOfFirefighters {
         case 5:
@@ -155,8 +183,8 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
             fallthrough
         case 3:
             //Форма №1
-            nameFF_1_label.positionOfElements(numbersFFView.topAnchor, 10,
-                                              numbersFFView.leadingAnchor, 5,
+            nameFF_1_label.positionOfElements(settingButton.bottomAnchor, 20,
+                                              titleName.leadingAnchor, 0,
                                               nil, 0,
                                               nil, 0)
             pressureFF_1_textField.positionOfElements(nameFF_1_label.topAnchor, 0,
@@ -213,7 +241,8 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
         
     }
     func actionFunc(){
-        calculationWorkButton.addTarget(self, action: #selector(printTest), for: .allEvents)//Действие для кнопки
+        settingButton.addTarget(self, action: #selector(printTest), for: .allEvents)//Действие для кнопки
+        saveDataButton.addTarget(self, action: #selector(printTest2), for: .touchUpInside)
         nameFF_1_label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(newNameFF1)))
         nameFF_2_label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(newNameFF2)))
         nameFF_3_label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(newNameFF3)))
@@ -242,17 +271,29 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
         actionController.addTextField { (textField: UITextField) in
             textField.placeholder = TF.text
         }
-        actionController.addAction(UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
+        actionController.addAction(UIAlertAction(title: "Save", style: .default, handler: { [self] alert -> Void in
             TF.text = actionController.textFields![0].text!
+            numberOfFirefighters = Int(actionController.textFields![0].text!)!
+            print(actionController.textFields![0].text!)
         }))
         rootVC?.present(actionController, animated: true, completion: nil)    }
     
     
     @objc func printTest() {
-        print("test")
+        settingView.alpha = 1
+    }
+    @objc func printTest2() {
+        NotificationCenter.default.post(name: NSNotification.Name.init("NumberSave"), object: nil)
+        numberOfFirefightersSave(Int(numberOfFirefightersTextField.text!)!)
+        print(numberOfCylinders.text!)
+        print(volumeOfAir.text!)
+        settingView.alpha = 0
     }
     
     func checkData() {
+        if numberOfFirefighters == 0 {
+            numberOfFirefightersSave(3)
+        }
         //MARK: Временное решения для проверки памяти на наличие данных
         func alerts() {
             let alertController = UIAlertController(title: "Внимание", message: "Укажите объем баллона", preferredStyle: .alert)
@@ -262,7 +303,6 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
             alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: {  alert in
                 let text = alertController.textFields![0]
                 FireTech.volumeOfTheCylinder(Double(text.text!)!)
-                
             }))
             rootVC!.present(alertController, animated: true, completion: nil)
         }

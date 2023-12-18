@@ -15,13 +15,39 @@ class StandartCalculatedData {
 
     
 }
+
+//var numberOfFirefightersTextField = UITextField()
+//var numberOfCylinders = UITextField()
+//Число газодымозащитников сохранение в память приложения до его удаления с телефона
+public func numberOfFirefightersSave(_ quantity: Int) {
+    UserDefaults.standard.setValue(quantity, forKey: "numberOfFirefighters")
+}
+//Число баллонов сохранение в память приложения до его удаления с телефона
+public func numberOfCylinders(_ quantity: Int){
+    UserDefaults.standard.setValue(quantity, forKey: "numberOfCylinders")
+}
+//Режим работы сохранение в память приложения до его удаления с телефона
+public func typeOfWork(_ bool: Bool) {
+    UserDefaults.standard.setValue(bool, forKey: "typeOfWork")
+}
 //Принимает объем баллона и сохраняет в память приложения до его удаления с телефона
 public func volumeOfTheCylinder(_ volume: Double){
     UserDefaults.standard.setValue(volume, forKey: "volumeOfTheCylinder")
 }
+
 //Возвращает данные сохраненые в приложении
 public func returnVolumeOfTheCylinder() -> Double {
     return UserDefaults.standard.double(forKey: "volumeOfTheCylinder")
 }
-
+public func returnNumberOfFirefighters() -> Int {
+    return UserDefaults.standard.integer(forKey: "numberOfFirefighters")
+}
+//Число баллонов сохранение в память приложения до его удаления с телефона
+public func returnNumberOfCylinders()-> Int{
+    return UserDefaults.standard.integer(forKey: "numberOfCylinders")
+}
+//Режим работы сохранение в память приложения до его удаления с телефона
+public func returnTypeOfWork()-> Bool {
+    return UserDefaults.standard.bool(forKey: "typeOfWork")
+}
 

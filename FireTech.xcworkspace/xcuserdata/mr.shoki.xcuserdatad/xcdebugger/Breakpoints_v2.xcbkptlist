@@ -3,4 +3,132 @@
    uuid = "C290EE26-EAD0-4FF4-81F6-EEBAD42F713D"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3647132-1CE6-4BA8-B3E6-3E509CBFA9CA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FireTech/UIElementClass/UITextField+extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "init?(coder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F3647132-1CE6-4BA8-B3E6-3E509CBFA9CA - 3d0780f718da7581"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireTech.fieldForCalculations.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FireTech.fieldForCalculations&gt;"
+                  moduleName = "FireTech"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mr.shoki/Documents/GitHub/FireTech/FireTech/UIElementClass/UITextField+extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "F3647132-1CE6-4BA8-B3E6-3E509CBFA9CA - 5367e8c4131b0501"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireTech.fieldForCalculations.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FireTech.fieldForCalculations&gt;"
+                  moduleName = "FireTech"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mr.shoki/Documents/GitHub/FireTech/FireTech/UIElementClass/UITextField+extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86542DF0-5085-448C-BEA5-BBA03BD9C90E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FireTech/UIElementClass/UIColor+extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "shadowColorBackgroundView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "86542DF0-5085-448C-BEA5-BBA03BD9C90E - 4994244581cb3e8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for shadowColorBackgroundView"
+                  moduleName = "FireTech"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mr.shoki/Documents/GitHub/FireTech/FireTech/UIElementClass/UIColor+extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "86542DF0-5085-448C-BEA5-BBA03BD9C90E - 682fa3c2200b6fe4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UITraitCollection) -&gt; __C.UIColor in variable initialization expression of static __C.UIColor.shadowColorBackgroundView : __C.UIColor"
+                  moduleName = "FireTech"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mr.shoki/Documents/GitHub/FireTech/FireTech/UIElementClass/UIColor+extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "86542DF0-5085-448C-BEA5-BBA03BD9C90E - fe87b2342dcb96d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIColor.shadowColorBackgroundView.unsafeMutableAddressor : __C.UIColor"
+                  moduleName = "FireTech"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mr.shoki/Documents/GitHub/FireTech/FireTech/UIElementClass/UIColor+extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "86542DF0-5085-448C-BEA5-BBA03BD9C90E - e83016f301a52318"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static __C.UIColor.shadowColorBackgroundView.getter : __C.UIColor"
+                  moduleName = "FireTech"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mr.shoki/Documents/GitHub/FireTech/FireTech/UIElementClass/UIColor+extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
