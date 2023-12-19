@@ -12,7 +12,7 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     
     weak var rootVC: calculationViewController?
     var classModel = prikaz640()
-    
+    let typeCheck = textFieldTypeName.self
     //MARK: Label var - переменные текстового окна
     var nameFF_1_label = calculationLabel()
     var nameFF_2_label = calculationLabel()// Всегда активные элементы
@@ -42,9 +42,11 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
         button.setTitle("Рассчет", for: .normal)
         return button
     }()
-    var settingButton: appActiveButton = { //Для этой кнопки надо сделать отдельный дизайн
-        let button = appActiveButton()
-        button.setTitle("=", for: .normal)
+    var settingButton: UIButton = { //Для этой кнопки надо сделать отдельный дизайн
+        let button = UIButton()
+//        button.setTitle("=", for: .normal)
+        button.setImage(UIImage(named: "setting"), for: .normal)
+        button.backgroundColor = .clear
         return button
     }()
     // Под вопросом полный функционал
@@ -280,15 +282,19 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     
     
     @objc func printTest() {
-        settingView.alpha = 1
+        UIView.animate(withDuration: 0.5, delay: 0.1, animations: {
+            self.settingView.alpha = 1
+        },completion: nil)
+//        settingView.alpha = 1
     }
     @objc func printTest2() {
+        numberOfFirefightersTextField.checkingTheForm(typeCheck.numbersFirefighters)
+        numberOfCylinders.checkingTheForm(typeCheck.numberOfCylinders)
+        volumeOfAir.checkingTheForm(typeCheck.volumeOfAir)
         NotificationCenter.default.post(name: NSNotification.Name.init("NumberSave"), object: nil)
-        numberOfFirefightersSave(Int(numberOfFirefightersTextField.text!)!)
-        print(numberOfCylinders.text!)
-        print(volumeOfAir.text!)
         settingView.alpha = 0
     }
+    
     
     func checkData() {
         if numberOfFirefighters == 0 {

@@ -23,7 +23,6 @@ class calculationViewController: UIViewController {
         classView.createLayoutUIElement(view)
         classView.rootVC = self
         classView.checkData()
-        classView.actionFunc()
         view.backgroundColor = .colorBackgroundView
         classView.settingViewFunc(view)
 
@@ -31,6 +30,7 @@ class calculationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        classView.actionFunc()
         self.tabBarController?.navigationItem.title = "Расчеты"
     }
     

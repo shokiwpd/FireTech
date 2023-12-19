@@ -65,9 +65,10 @@ extension UIView {
     
 }
 class calculationViewContainer: UIView {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .colorBackgroundView
+        backgroundColor = .mediumColorBackgroundView
         shadowView()
     }
     func shadowView() {
@@ -77,8 +78,7 @@ class calculationViewContainer: UIView {
         layer.shadowOpacity = 0.5
         clipsToBounds = true
         layer.masksToBounds = false
-        layer.shadowColor = UIColor.gray.cgColor
-        print("Action")
+        layer.shadowColor = UIColor.lightGray.cgColor
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

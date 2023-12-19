@@ -16,7 +16,7 @@ class appActiveButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setTitleColor(.colorText, for: .normal)
-        backgroundColor = .colorBackgroundView
+        backgroundColor = .mediumColorBackgroundView
         layer.cornerRadius = 10
         layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         layer.shadowRadius = 10

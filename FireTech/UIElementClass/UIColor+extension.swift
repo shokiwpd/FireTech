@@ -10,6 +10,13 @@ import UIKit
 
 //Настройка цветовой гаммы приложения
 //Тут будут установлены все цвета приложения
+extension CGColor {
+    static let customWhiteCGColor = CGColor(red: 255/255,green: 254/255,blue: 252/255,alpha: 1)
+    static let customBlackCGColor = CGColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+
+}
+
+
 
 extension UIColor {
     //Цветовая гамма приложения
@@ -18,11 +25,12 @@ extension UIColor {
     static let customBlackColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
     //Цветвоая гамма для полей ввода текста
     static let customMediumWhiteColor = UIColor(red: 246/255,green: 246/255,blue: 246/255,alpha: 1)
-    static let customMediumBlackColor = UIColor(red: 48/255, green: 48/255, blue: 48/255, alpha: 1)
+    static let customMediumBlackColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1)
     //Цветовая гамма для кнопок
     static let customRedColor = UIColor(red: 220/255,green: 13/255,blue: 0/255,alpha: 0.7)
     static let customDarkRedColor = UIColor(red: 204/255, green: 10/255, blue: 0/255, alpha: 1)
     
+
     //Цветовая гамма будет дополняться если потребуется
     
     //Цветовая гамма для темной и светлой темы
@@ -33,6 +41,17 @@ extension UIColor {
             return customWhiteColor
         }
     }
+    static let mediumColorBackgroundView = UIColor { (trat: UITraitCollection) -> UIColor in
+        if trat.userInterfaceStyle == .dark {
+            return customMediumBlackColor
+        } else {
+            return customMediumWhiteColor
+        }
+    }
+    
+   
+ 
+    
     static let shadowColorBackgroundView = UIColor { (trat: UITraitCollection) -> UIColor in
         if trat.userInterfaceStyle == .dark {
             return customWhiteColor
