@@ -20,8 +20,7 @@ class newsView: UIView  {
     }
     //MARK: Функция для расположения UICollectionView на сториборде
     func layoutViewCollection(_ view: UIView) {
-        newsViewCollection.positionOfElements(view.topAnchor, 0,
-
+        newsViewCollection.positionOfElements(view.safeAreaLayoutGuide.topAnchor, 0,
                                               view.leadingAnchor, 0,
                                               view.trailingAnchor, 0,
                                               view.bottomAnchor, 0)

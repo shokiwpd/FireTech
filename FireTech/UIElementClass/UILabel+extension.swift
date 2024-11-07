@@ -90,4 +90,16 @@ class calculationLabel: UILabel {
     
     
 }
+class workResultation: UILabel {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.font = UIFont(name: "MOSCOW2024", size: CGFloat(25))
+        numberOfLines = 2
+        textAlignment = .center
+    }
+    
+   required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 

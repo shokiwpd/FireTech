@@ -28,7 +28,7 @@ class NewsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.tabBarController?.navigationItem.title = "Главная"
+        self.tabBarController?.title = "Главная"
     }
     
     /*

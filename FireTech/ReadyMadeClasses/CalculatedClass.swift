@@ -7,7 +7,7 @@
 
 import Foundation
 //Стандартные данные для расчетов 
-class StandartCalculatedData {
+struct StandartCalculatedData {
     let averageAirConsumption_640 = 45.0   // по 640 приказу МЧС РФ
     let averageAirConsumption_3 = 40      // расход воздуха по методическим рекомендациям
     let compressionRatio_640 = 1.1 // коэффициент сжатия
@@ -15,9 +15,7 @@ class StandartCalculatedData {
 
     
 }
-
-//var numberOfFirefightersTextField = UITextField()
-//var numberOfCylinders = UITextField()
+// MARK: Gate UserDefault data
 //Число газодымозащитников сохранение в память приложения до его удаления с телефона
 public func numberOfFirefightersSave(_ quantity: Int) {
     UserDefaults.standard.setValue(quantity, forKey: "numberOfFirefighters")
@@ -34,11 +32,12 @@ public func typeOfWork(_ bool: Bool) {
 public func volumeOfTheCylinder(_ volume: Double){
     UserDefaults.standard.setValue(volume, forKey: "volumeOfTheCylinder")
 }
-
+// MARK: Return UserDefault data
 //Возвращает данные сохраненые в приложении
 public func returnVolumeOfTheCylinder() -> Double {
     return UserDefaults.standard.double(forKey: "volumeOfTheCylinder")
 }
+//Возвращает количество пожарных в звене
 public func returnNumberOfFirefighters() -> Int {
     return UserDefaults.standard.integer(forKey: "numberOfFirefighters")
 }

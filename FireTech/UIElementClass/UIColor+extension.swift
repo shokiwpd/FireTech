@@ -8,16 +8,6 @@
 import Foundation
 import UIKit
 
-//Настройка цветовой гаммы приложения
-//Тут будут установлены все цвета приложения
-extension CGColor {
-    static let customWhiteCGColor = CGColor(red: 255/255,green: 254/255,blue: 252/255,alpha: 1)
-    static let customBlackCGColor = CGColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-
-}
-
-
-
 extension UIColor {
     //Цветовая гамма приложения
     //Фоновая/Текстовая цветовая гамма
@@ -30,7 +20,7 @@ extension UIColor {
     static let customRedColor = UIColor(red: 220/255,green: 13/255,blue: 0/255,alpha: 0.7)
     static let customDarkRedColor = UIColor(red: 204/255, green: 10/255, blue: 0/255, alpha: 1)
     
-
+    
     //Цветовая гамма будет дополняться если потребуется
     
     //Цветовая гамма для темной и светлой темы
@@ -49,8 +39,8 @@ extension UIColor {
         }
     }
     
-   
- 
+    
+    
     
     static let shadowColorBackgroundView = UIColor { (trat: UITraitCollection) -> UIColor in
         if trat.userInterfaceStyle == .dark {
@@ -59,7 +49,7 @@ extension UIColor {
             return customBlackColor
         }
     }
-
+    
     static let colorText = UIColor { (trat: UITraitCollection) -> UIColor in
         if trat.userInterfaceStyle == .dark {
             return customWhiteColor

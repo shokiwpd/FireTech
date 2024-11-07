@@ -32,13 +32,13 @@ extension UIView {
         //Настройка положения правой части элемента
         if let trailing = trailing {
             trailingAnchor.constraint(equalTo: trailing, constant: trailingConstant).isActive = true
-            
         }
         //Настройка положения нижней части элемента
         if let bottom = bottom {
             bottomAnchor.constraint(equalTo: bottom, constant: bottomConstant).isActive = true
         }
     }
+    
     //Изменение ширины объекта
     func widthSize(_ w: CGFloat) {
         self.widthAnchor.constraint(equalToConstant: w).isActive = true
@@ -73,12 +73,10 @@ class calculationViewContainer: UIView {
     }
     func shadowView() {
         layer.cornerRadius = 10
-        layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        layer.shadowRadius = 10
-        layer.shadowOpacity = 0.5
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.gray.cgColor
         clipsToBounds = true
         layer.masksToBounds = false
-        layer.shadowColor = UIColor.lightGray.cgColor
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
