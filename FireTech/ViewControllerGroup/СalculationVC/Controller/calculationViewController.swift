@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class calculationViewController: UIViewController {
+class calculationViewController: UIViewController, UISearchBarDelegate {
     
     let classView = calculationView()
     
@@ -25,13 +25,15 @@ class calculationViewController: UIViewController {
         classView.checkData()
         view.backgroundColor = .colorBackgroundView
         classView.settingViewFunc(view)
-
+        title = "Расчеты"
     }
-    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.showsCancelButton = false
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         classView.actionFunc()
-        self.tabBarController?.navigationItem.title = "Расчеты"
     }
     
     

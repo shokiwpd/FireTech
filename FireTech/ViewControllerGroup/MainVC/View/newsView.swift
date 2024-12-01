@@ -20,7 +20,7 @@ class newsView: UIView  {
     }
     //MARK: Функция для расположения UICollectionView на сториборде
     func layoutViewCollection(_ view: UIView) {
-        newsViewCollection.positionOfElements(view.safeAreaLayoutGuide.topAnchor, 0,
+        newsViewCollection.positionOfElements(view.topAnchor, 0,
                                               view.leadingAnchor, 0,
                                               view.trailingAnchor, 0,
                                               view.bottomAnchor, 0)
@@ -32,7 +32,6 @@ class newsCollection: UICollectionView, UICollectionViewDelegate, UICollectionVi
     //MARK: создаем ссылку на контроллер в котором будет отображаться UICollectionView
     weak var newsCollectionView: NewsViewController?
     let newsDecodeJSON: [newsDecodable] = try! JSONDecoder().decode([newsDecodable].self, from: newsJSONData)
-    
     init(){
         
         //MARK: инициализируем возможность графической настройки UICollectionView
@@ -50,17 +49,13 @@ class newsCollection: UICollectionView, UICollectionViewDelegate, UICollectionVi
         showsHorizontalScrollIndicator = false
         collectionLayout.minimumLineSpacing = 20
         contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return newsDecodeJSON.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: newsCollectionCell.cellName, for: indexPath) as! newsCollectionCell
         cell.headerNews.text = newsDecodeJSON[indexPath.row].newsTitle
@@ -72,7 +67,6 @@ class newsCollection: UICollectionView, UICollectionViewDelegate, UICollectionVi
         return CGSize(width: Int(frame.width * 0.9), height: Int(frame.width * 0.9))//Int(frame.height * 0.5))
     }
 }
-
 //MARK: Создание и оформление UICollectionViewCell для UICollectionView
 class newsCollectionCell: UICollectionViewCell {
     

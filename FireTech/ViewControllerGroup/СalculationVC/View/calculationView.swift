@@ -9,60 +9,43 @@ import Foundation
 import UIKit
 
 class calculationView: UIView, UIGestureRecognizerDelegate {
-    
+    //MARK: Root
     weak var rootVC: calculationViewController?
-    
+    //MARK: Custom class
     var classModel = prikaz640()
-    //MARK: Label var - переменные текстового окна
-    var nameFF_1_label = calculationLabel()
-    var nameFF_2_label = calculationLabel()// Всегда активные элементы
-    var nameFF_3_label = calculationLabel()
+    //MARK: UIKit
+    var nameFF_1_label = calculationLabel()//
+    var nameFF_2_label = calculationLabel()//
+    var nameFF_3_label = calculationLabel()//
     lazy var nameFF_4_label = calculationLabel()// не активны пока они не требуются
-    lazy var nameFF_5_label = calculationLabel()
-    var StringFF1 = ""//  - Ф.И 1 пожарного
-    var StringFF2 = "" // - Ф.И 2 пожарного
-    var StringFF3 = ""// - Ф.И 3 пожарного
-    var StringFF4 = ""// - Ф.И 4 пожарного
-    var StringFF5 = ""// - Ф.И 5 пожарного
-
-    //
-    let resultPreper = resultController()
-    //MARK:
-    var titleName = calculationLabel() // [Заголовок]
-    var timeLabel = calculationLabel()
-    
-    //MARK: textField var - переменные поля для ввода текст(изменить в кастом файле)
-    // Осталось настроить все фильтры для ввода текста
+    lazy var nameFF_5_label = calculationLabel()//
     var pressureFF_1_textField = customTextField() //
     var pressureFF_2_textField = customTextField()// Всегда активные эелементы
     var pressureFF_3_textField = customTextField() //
     lazy var pressureFF_4_textField = customTextField() // Не активны пока не требуются
     lazy var pressureFF_5_textField = customTextField() //
-    
     var timeField = customTextField()
-    
-    //MARK: Вью для элементов расчетов (Изменить в кастом файле)
     var numbersFFView = calculationViewContainer()
     var timeView = calculationViewContainer()
-    
-    //MARK: Button var - кнопка для перехода на другой экран
     var calculationWorkButton = UIButton()
     var settingButton = UIButton()  //Для этой кнопки надо сделать отдельный дизайн
     var saveDataButton = UIButton()// Одно из двух. Либо крестик, либо кнопка сохранить
-    
-    // Под вопросом полный функционал
-    
-    //MARK: view var - поле которое будет появляться при первом запуске и его составляющие, либо при вызове настроек
     var settingView = calculationViewContainer()
     var numberOfFirefightersTextField = customTextField()
     var numberOfCylinders = customTextField()
     var volumeOfAir =  customTextField()
-    
-    //MARK: Данная функция содает элементы на на контроллере в зависимости от числа пожарных
-    
+    let resultPreper = resultController()
+    var titleName = calculationLabel() // [Заголовок]
+    var timeLabel = calculationLabel()
+    //MARK: String
+    var StringFF1 = ""//  - Ф.И 1 пожарного
+    var StringFF2 = "" // - Ф.И 2 пожарного
+    var StringFF3 = ""// - Ф.И 3 пожарного
+    var StringFF4 = ""// - Ф.И 4 пожарного
+    var StringFF5 = ""// - Ф.И 5 пожарного
+    //MARK: Function
     func settingViewFunc(_ VC: UIView) {
         settingView.alpha = 0
-        
         pressureFF_1_textField.visualSetting(.calculationType)
         pressureFF_2_textField.visualSetting(.calculationType)
         pressureFF_3_textField.visualSetting(.calculationType)
@@ -117,7 +100,6 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
                                           settingView.trailingAnchor, -5,
                                           settingView.bottomAnchor, -5)
     }
-    
     func addElementToController(_ VC: UIView) {
         VC.creatingElements([numbersFFView,
                              timeView,
@@ -146,8 +128,6 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
         default: break
         }
     }
-    //Функция которая распределяет элементы на контроллере согласно числу пожарных
-    //Как и в случае создания объектов на экране, мы расставляем элементы в нужных местах
     func createLayoutUIElement(_ VC: UIView){
         //MARK: Присвоение названи лейблам
         nameFF_1_label.text = "Ф.И. ГДЗ 1"
@@ -161,9 +141,9 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
         timeField.placeholder = convertDateToString(time: Date.now)
         
         //MARK: Расположение Вью для элементов
-        numbersFFView.positionOfElements(VC.safeAreaLayoutGuide.topAnchor, 0,
-                                         VC.leadingAnchor, 10,
-                                         VC.trailingAnchor, -10,
+        numbersFFView.positionOfElements(VC.topAnchor, 0,
+                                         VC.leadingAnchor, 0,
+                                         VC.trailingAnchor, 0,
                                          nil, 0)
         timeView.positionOfElements(numbersFFView.bottomAnchor, 30,
                                     numbersFFView.leadingAnchor, 0,
@@ -274,7 +254,28 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
         nameFF_4_label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(newNameFF4)))
         nameFF_5_label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(newNameFF5)))
     }
-    
+    func assigningNewName(_ TF: UILabel)-> String{
+        let StringTest = ""
+        let actionController = UIAlertController(title: "Внимание", message: "Укажите имя газодымозащитника", preferredStyle: .alert)
+        actionController.addTextField { (textField: UITextField) in
+            textField.placeholder = TF.text
+        }
+        actionController.addAction(UIAlertAction(title: "Сохранить ", style: .default, handler: {  alert -> Void in
+            TF.text = actionController.textFields![0].text!
+            switch TF.tag {
+            case 0: self.StringFF1 = actionController.textFields![0].text!
+            case 1: self.StringFF2 = actionController.textFields![0].text!
+            case 2: self.StringFF3 = actionController.textFields![0].text!
+            case 3: self.StringFF4 = actionController.textFields![0].text!
+            case 4: self.StringFF5 = actionController.textFields![0].text!
+            default: break
+            }
+        }))
+        rootVC?.present(actionController, animated: true, completion: nil)
+        return StringTest
+        
+    }
+    //MARK: objc function
     @objc func newNameFF1(){
         resultPreper.resultViewRoot.StringFirefighterOne = self.assigningNewName(nameFF_1_label)
         resultPreper.resultViewRoot.StringFirefighterOne = "Yoba"
@@ -293,30 +294,6 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     @objc func newNameFF5(){
         StringFF5 =  assigningNewName(nameFF_5_label)
     }
-    
-    func assigningNewName(_ TF: UILabel)-> String{
-        var StringTest = ""
-        let actionController = UIAlertController(title: "Внимание", message: "Укажите имя газодымозащитника", preferredStyle: .alert)
-        actionController.addTextField { (textField: UITextField) in
-            textField.placeholder = TF.text
-        }
-        actionController.addAction(UIAlertAction(title: "Сохранить ", style: .default, handler: {  alert -> Void in
-            TF.text = actionController.textFields![0].text!
-            switch TF.tag {
-                case 0: self.StringFF1 = actionController.textFields![0].text!
-                case 1: self.StringFF2 = actionController.textFields![0].text!
-                case 2: self.StringFF3 = actionController.textFields![0].text!
-                case 3: self.StringFF4 = actionController.textFields![0].text!
-                case 4: self.StringFF5 = actionController.textFields![0].text!
-            default: break
-            }
-        }))
-        rootVC?.present(actionController, animated: true, completion: nil)
-        return StringTest
-        
-    }
-    
-    
     @objc func openSettingView() {
         UIView.animate(withDuration: 0.5, delay: 0.1, animations: {
             self.settingView.alpha = 1
@@ -371,11 +348,9 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
         resultPreper.resultViewRoot.timeWorkClock =  classModel.timeCommand
         resultPreper.resultViewRoot.timeExitClock = classModel.timeFacticalExit
         
-//rootVC?.modal.TransitionStyle = .scroll
+        //rootVC?.modal.TransitionStyle = .scroll
         rootVC?.navigationController?.pushViewController(resultPreper, animated: true)
     }
-    
-    
     @objc func saveEdithData() {
         numberOfFirefightersTextField.checkingTheForm(textFieldCheck.numbersFirefighters)
         numberOfCylinders.checkingTheForm(textFieldCheck.numberOfCylinders)
@@ -385,8 +360,6 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
         UIView.animate(withDuration: 0.5, delay: 0.1, animations: {
             self.settingView.alpha = 0
         },completion: nil)    }
-    
-    
     func checkData() {
         //MARK: Временное решения для проверки памяти на наличие данных
         func alerts() {

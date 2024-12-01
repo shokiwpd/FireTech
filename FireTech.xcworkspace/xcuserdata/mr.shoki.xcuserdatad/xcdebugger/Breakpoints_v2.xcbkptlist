@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2A998075-CAD9-4DA2-ADEB-FF04C1239AC8"
-            shouldBeEnabled = "Yes"
+            uuid = "78978481-FF59-4E13-A796-BBCA42EDCA3C"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FireTech/ViewControllerGroup/&#x421;alculationVC/View/calculationView.swift"
+            filePath = "FireTech/ViewControllerGroup/MLtechVC/View/MLTechView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
-            landmarkName = "newNameFF1()"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "startAllFunc(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

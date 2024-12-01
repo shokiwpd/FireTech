@@ -24,11 +24,11 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         classNewsView.rootVC = self
         classNewsView.layoutViewCollection(view)
+        title = "Новости"
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.tabBarController?.title = "Главная"
     }
     
     /*

@@ -14,11 +14,11 @@ class mainTabBarView: UITabBarController {
 
     func selectItemBar(){
         rootVC!.viewControllers = [
-            settingTabBarElement(VC: UINavigationController(rootViewController: NewsViewController()), title: "Главная", image: UIImage(named: "main")!),
-            settingTabBarElement(VC: UINavigationController(rootViewController:calculationViewController()), title: "Расчеты", image: UIImage(named: "calc")!)]
+            settingTabBarElement(VC: navigationControllers(rootViewController: NewsViewController()), title: "Главная", image: UIImage(named: "main")!),
+            settingTabBarElement(VC: navigationControllers(rootViewController: MLTechController()), title: "CoreML", image: UIImage(named: "calc")!),
+            settingTabBarElement(VC: navigationControllers(rootViewController:calculationViewController()), title: "Расчеты", image: UIImage(named: "calc")!)]
     }
-    
-    
+
     func settingTabBarElement(VC: UINavigationController, title: String, image: UIImage) ->
     UIViewController {
         VC.tabBarItem.title = title

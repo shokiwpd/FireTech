@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
     //функция с настройками положения элементов и включение
-    func positionOfElements(_ top: NSLayoutAnchor<NSLayoutYAxisAnchor>?,
+    func  positionOfElements(_ top: NSLayoutAnchor<NSLayoutYAxisAnchor>?,
                             _ topConstrant: CGFloat,
                             _ leading: NSLayoutAnchor<NSLayoutXAxisAnchor>?,
                             _ leadingConstant: CGFloat,
@@ -72,7 +72,7 @@ class calculationViewContainer: UIView {
         shadowView()
     }
     func shadowView() {
-        layer.cornerRadius = 10
+        layer.cornerRadius = 20
         layer.borderWidth = 0.5
         layer.borderColor = UIColor.gray.cgColor
         clipsToBounds = true

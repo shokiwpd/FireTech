@@ -35,6 +35,13 @@
 		F5372BED2CBD572E0073940D /* resultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5372BEC2CBD571B0073940D /* resultController.swift */; };
 		F5372BEF2CBD57450073940D /* resultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5372BEE2CBD573C0073940D /* resultModel.swift */; };
 		F5372BF12CBD57540073940D /* resultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5372BF02CBD574A0073940D /* resultView.swift */; };
+		F5434E0C2CE784C1004835AA /* navigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5434E0B2CE784B5004835AA /* navigationModel.swift */; };
+		F5434E0E2CE784CD004835AA /* navigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5434E0D2CE784C6004835AA /* navigationView.swift */; };
+		F5434E102CE784DE004835AA /* navigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5434E0F2CE784D0004835AA /* navigationController.swift */; };
+		F5775F2A2CF76EF1003A4B6A /* MLTechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5775F292CF76EE3003A4B6A /* MLTechController.swift */; };
+		F5775F2C2CF76EFA003A4B6A /* MLTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5775F2B2CF76EF2003A4B6A /* MLTechView.swift */; };
+		F5775F2E2CF76F09003A4B6A /* MLTechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5775F2D2CF76EFF003A4B6A /* MLTechModel.swift */; };
+		F5775F342CF7715A003A4B6A /* FireTechML.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F5775F332CF7715A003A4B6A /* FireTechML.mlmodel */; };
 		F5B2E3822CDCE12200580369 /* MOSCOW2024.otf in Resources */ = {isa = PBXBuildFile; fileRef = F5B2E3812CDCE12200580369 /* MOSCOW2024.otf */; };
 		F5CE47A82B1C99C0002869F2 /* documentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE47A72B1C99C0002869F2 /* documentViewController.swift */; };
 		F5CE47AA2B1C99CC002869F2 /* documentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE47A92B1C99CC002869F2 /* documentView.swift */; };
@@ -99,6 +106,13 @@
 		F5372BEC2CBD571B0073940D /* resultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultController.swift; sourceTree = "<group>"; };
 		F5372BEE2CBD573C0073940D /* resultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultModel.swift; sourceTree = "<group>"; };
 		F5372BF02CBD574A0073940D /* resultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultView.swift; sourceTree = "<group>"; };
+		F5434E0B2CE784B5004835AA /* navigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationModel.swift; sourceTree = "<group>"; };
+		F5434E0D2CE784C6004835AA /* navigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationView.swift; sourceTree = "<group>"; };
+		F5434E0F2CE784D0004835AA /* navigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationController.swift; sourceTree = "<group>"; };
+		F5775F292CF76EE3003A4B6A /* MLTechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTechController.swift; sourceTree = "<group>"; };
+		F5775F2B2CF76EF2003A4B6A /* MLTechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTechView.swift; sourceTree = "<group>"; };
+		F5775F2D2CF76EFF003A4B6A /* MLTechModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTechModel.swift; sourceTree = "<group>"; };
+		F5775F332CF7715A003A4B6A /* FireTechML.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FireTechML.mlmodel; sourceTree = "<group>"; };
 		F58858D22B12625000BEEF15 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F5B2E3812CDCE12200580369 /* MOSCOW2024.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MOSCOW2024.otf; sourceTree = "<group>"; };
 		F5CE47A72B1C99C0002869F2 /* documentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documentViewController.swift; sourceTree = "<group>"; };
@@ -141,11 +155,13 @@
 		13048B8828C263D0003657FD /* ViewControllerGroup */ = {
 			isa = PBXGroup;
 			children = (
+				F5775F262CF76E7D003A4B6A /* MLtechVC */,
+				F5434E072CE7847D004835AA /* NavigationController */,
 				F5372BE82CBD56C40073940D /* ResultVC */,
-				F5CE47A32B1C9966002869F2 /* documentVC */,
+				F5CE47A32B1C9966002869F2 /* DocumentVC */,
 				F5DC1C7A2A6D99DD00D5C204 /* СalculationVC */,
 				13CC88B1299536B90056C90A /* MainVC */,
-				1385258B291BE5D10042EDBF /* mainBarVC */,
+				1385258B291BE5D10042EDBF /* MainBarVC */,
 			);
 			path = ViewControllerGroup;
 			sourceTree = "<group>";
@@ -162,14 +178,14 @@
 			path = ReadyMadeClasses;
 			sourceTree = "<group>";
 		};
-		1385258B291BE5D10042EDBF /* mainBarVC */ = {
+		1385258B291BE5D10042EDBF /* MainBarVC */ = {
 			isa = PBXGroup;
 			children = (
 				F501221E2B0263A10049A51C /* Controller */,
 				F501221D2B0263950049A51C /* View */,
 				F501221C2B0263880049A51C /* Model */,
 			);
-			path = mainBarVC;
+			path = MainBarVC;
 			sourceTree = "<group>";
 		};
 		13936F2C28B11CD3004C9943 = {
@@ -204,6 +220,7 @@
 				13936F3828B11CD3004C9943 /* AppDelegate.swift */,
 				13936F3A28B11CD3004C9943 /* SceneDelegate.swift */,
 				13936F4128B11CD6004C9943 /* Assets.xcassets */,
+				F5775F332CF7715A003A4B6A /* FireTechML.mlmodel */,
 				F5B2E3812CDCE12200580369 /* MOSCOW2024.otf */,
 				13936F4328B11CD6004C9943 /* LaunchScreen.storyboard */,
 				13936F4628B11CD6004C9943 /* Info.plist */,
@@ -352,14 +369,82 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F5CE47A32B1C9966002869F2 /* documentVC */ = {
+		F5434E072CE7847D004835AA /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				F5434E0A2CE7849B004835AA /* Model */,
+				F5434E092CE7849A004835AA /* View */,
+				F5434E082CE78497004835AA /* Controller */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		F5434E082CE78497004835AA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5434E0F2CE784D0004835AA /* navigationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F5434E092CE7849A004835AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5434E0D2CE784C6004835AA /* navigationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5434E0A2CE7849B004835AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5434E0B2CE784B5004835AA /* navigationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F5775F252CF76E7A003A4B6A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5775F292CF76EE3003A4B6A /* MLTechController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F5775F262CF76E7D003A4B6A /* MLtechVC */ = {
+			isa = PBXGroup;
+			children = (
+				F5775F282CF76E88003A4B6A /* Model */,
+				F5775F272CF76E85003A4B6A /* View */,
+				F5775F252CF76E7A003A4B6A /* Controller */,
+			);
+			path = MLtechVC;
+			sourceTree = "<group>";
+		};
+		F5775F272CF76E85003A4B6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5775F2B2CF76EF2003A4B6A /* MLTechView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5775F282CF76E88003A4B6A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5775F2D2CF76EFF003A4B6A /* MLTechModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F5CE47A32B1C9966002869F2 /* DocumentVC */ = {
 			isa = PBXGroup;
 			children = (
 				F5CE47A62B1C9997002869F2 /* Model */,
 				F5CE47A52B1C9988002869F2 /* View */,
 				F5CE47A42B1C997A002869F2 /* Controller */,
 			);
-			path = documentVC;
+			path = DocumentVC;
 			sourceTree = "<group>";
 		};
 		F5CE47A42B1C997A002869F2 /* Controller */ = {
@@ -584,12 +669,19 @@
 				1321503228BBAF1A00D40294 /* UILabel+extension.swift in Sources */,
 				F5DC1C852A6D9BA700D5C204 /* calculationViewController.swift in Sources */,
 				13048B8E28C2698A003657FD /* UIImage+extension.swift in Sources */,
+				F5434E0C2CE784C1004835AA /* navigationModel.swift in Sources */,
+				F5434E102CE784DE004835AA /* navigationController.swift in Sources */,
 				1383DD7628D224A800DD257B /* DataUserDefaults.swift in Sources */,
 				F5E0447B2B0264AB00D8B532 /* mainTabBarModel.swift in Sources */,
+				F5775F2E2CF76F09003A4B6A /* MLTechModel.swift in Sources */,
+				F5775F2A2CF76EF1003A4B6A /* MLTechController.swift in Sources */,
 				F5CE47AC2B1C99E0002869F2 /* documentModel.swift in Sources */,
 				F5CE47AA2B1C99CC002869F2 /* documentView.swift in Sources */,
+				F5775F342CF7715A003A4B6A /* FireTechML.mlmodel in Sources */,
 				F5372BF12CBD57540073940D /* resultView.swift in Sources */,
+				F5775F2C2CF76EFA003A4B6A /* MLTechView.swift in Sources */,
 				F5372BEF2CBD57450073940D /* resultModel.swift in Sources */,
+				F5434E0E2CE784CD004835AA /* navigationView.swift in Sources */,
 				13936F3928B11CD3004C9943 /* AppDelegate.swift in Sources */,
 				13936F6A28B11D50004C9943 /* UIView+extension.swift in Sources */,
 				13B7E2062980547800D14AF3 /* NewsViewController.swift in Sources */,
