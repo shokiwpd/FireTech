@@ -22,6 +22,7 @@ class MLTechView: UIView {
     //MARK: AVKit elements
     let captureSessionML = AVCaptureSession()
     let captureVideoDataOutputML  = AVCaptureVideoDataOutput()
+  
     
     func AVelemets(_ VC: UIView) {
         guard let captureDeviceML = AVCaptureDevice.default(for: .video) else {return}
@@ -65,17 +66,35 @@ class MLTechView: UIView {
 }
 extension MLTechController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard let PTVModel = try? VNCoreMLModel(for: FireTechML().model) else {return}
+        let MLmodel: FireTechML = {
+            do {
+                let config = MLModelConfiguration()
+                return try FireTechML(configuration: config)
+            } catch {
+                print(error)
+                fatalError("CrError")
+            }
+        }()
+        guard let PTVModel = try? VNCoreMLModel(for: MLmodel.model) else {return}
         guard let pixelBuffer: CVPixelBuffer =  CMSampleBufferGetImageBuffer(sampleBuffer) else {return}
         let requestML = VNCoreMLRequest(model: PTVModel) { finichReq, error in
             guard let resultPTV = finichReq.results as? [VNClassificationObservation] else {return}
             guard let firstResultPTV = resultPTV.first else {return}
-            DispatchQueue.main.async {
-                self.classsMLView.openInfoButton.setTitle(firstResultPTV.identifier, for: .normal)
-                self.classsMLView.getMLresult = firstResultPTV.identifier
-                print(firstResultPTV.identifier)
+            DispatchQueue.main.async { [self] in
+                self.classMLView.openInfoButton.setTitle(firstResultPTV.identifier, for: .normal)
+                self.classMLView.getMLresult = firstResultPTV.identifier
+                self.classMLView.openInfoButton.addTarget(self, action: #selector(openInfoFunc), for: .touchUpInside)
             }
         }
-        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([requestML])
+            try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([requestML])
+        }
+
+    @objc func openInfoFunc() {
+//        let alertController = UIAlertController(title: "Внимание", message: self.classMLView.getMLresult, preferredStyle: .alert)
+//        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel))
+//        present(alertController, animated: true, completion: nil)
+        let infoVC = MLinfoController()
+        infoVC.MLinfoViewClass.InformationText = self.classMLView.getMLresult
+        navigationController?.pushViewController(infoVC, animated: false)
     }
 }

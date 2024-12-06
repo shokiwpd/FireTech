@@ -278,7 +278,6 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
     //MARK: objc function
     @objc func newNameFF1(){
         resultPreper.resultViewRoot.StringFirefighterOne = self.assigningNewName(nameFF_1_label)
-        resultPreper.resultViewRoot.StringFirefighterOne = "Yoba"
         resultController().resultViewRoot.StringFirefighterOne = assigningNewName(nameFF_1_label)
         
     }
@@ -348,7 +347,6 @@ class calculationView: UIView, UIGestureRecognizerDelegate {
         resultPreper.resultViewRoot.timeWorkClock =  classModel.timeCommand
         resultPreper.resultViewRoot.timeExitClock = classModel.timeFacticalExit
         
-        //rootVC?.modal.TransitionStyle = .scroll
         rootVC?.navigationController?.pushViewController(resultPreper, animated: true)
     }
     @objc func saveEdithData() {

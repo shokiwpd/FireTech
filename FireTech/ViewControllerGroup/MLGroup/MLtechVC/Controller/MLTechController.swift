@@ -12,13 +12,14 @@ import AVKit
 
 
 class MLTechController: UIViewController {
-    let classsMLView = MLTechView()
+    let classMLView = MLTechView()
  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "CoreML"
-        classsMLView.MLTechControllerRoot = self
-        classsMLView.startAllFunc(view)
+        classMLView.MLTechControllerRoot = self
+        classMLView.startAllFunc(view)
     }
 }
     

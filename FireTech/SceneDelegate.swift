@@ -18,16 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let openAppView = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: openAppView)
-//        let navi = navigationControllers(rootViewController: mainTabBarController())
-//        
-////        let apper = UINavigationBarAppearance()
-////        apper.backgroundColor = .mediumColorBackgroundView
-////        navi.navigationBar.standardAppearance = apper
-////        navi.navigationBar.scrollEdgeAppearance = apper
-////        navi.navigationBar.isTranslucent = false
-////        navi.navigationBar.prefersLargeTitles = true
-////        navi.navigationBar.compactAppearance = .none
-////        navi.navigationBar.backgroundColor = .mediumColorBackgroundView
         window.rootViewController = mainTabBarController()
         self.window = window
         window.makeKeyAndVisible()

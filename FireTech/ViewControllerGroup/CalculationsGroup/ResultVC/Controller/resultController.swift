@@ -12,11 +12,14 @@ class resultController: UIViewController {
     let resultViewRoot = resultView()
     var RTest = ""
     
+    override func loadView() {
+        resultViewRoot.creatingElementInView(view)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .colorBackgroundView
         resultViewRoot.rootVC = self
-        resultViewRoot.creatingElementInView(view)
         resultViewRoot.arrangementOfElementInView(view)
         resultViewRoot.timerWorkFunc()
         resultViewRoot.timerExitFunc()
