@@ -17,7 +17,7 @@ class MLTechController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "CoreML"
+        title = "Умная камера"
         classMLView.MLTechControllerRoot = self
         classMLView.startAllFunc(view)
     }
