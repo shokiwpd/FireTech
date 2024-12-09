@@ -43,7 +43,6 @@
 		F560D0462D01E0B300973341 /* MLinfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F560D0452D01E0AA00973341 /* MLinfoController.swift */; };
 		F560D0482D01E0BE00973341 /* MLinfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F560D0472D01E0B800973341 /* MLinfoView.swift */; };
 		F560D04A2D01E0CB00973341 /* MLinfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F560D0492D01E0C500973341 /* MLinfoModel.swift */; };
-		F560D04C2D0206E400973341 /* FireTechML.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F560D04B2D0206E400973341 /* FireTechML.mlmodel */; };
 		F5775F2A2CF76EF1003A4B6A /* MLTechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5775F292CF76EE3003A4B6A /* MLTechController.swift */; };
 		F5775F2C2CF76EFA003A4B6A /* MLTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5775F2B2CF76EF2003A4B6A /* MLTechView.swift */; };
 		F5775F2E2CF76F09003A4B6A /* MLTechModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5775F2D2CF76EFF003A4B6A /* MLTechModel.swift */; };
